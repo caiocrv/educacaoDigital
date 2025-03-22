@@ -24,6 +24,18 @@ def login():
 
     return jsonify(user_data)
 
+@app.route("/cadastro", methods=['GET', 'POST'])
+def cadastro():
+    if request.method == 'POST':
+        password = request.form.get('password')
+        confirmPassword = request.form.get('confirmPassword')
+
+        if confirmPassword != password:
+            return render_template('cadastro.html', error="As senhas não coincidem.")
+
+        return jsonify({"massege": "Cadastro realizado com sucesso!"})
+    
+    return render_template('cadastro.html')
 
 
 
@@ -31,4 +43,4 @@ def login():
 
 
 if __name__ == '__main__':
-    app.run(host='172.19.214.107', port=500)
+    app.run(host='0.0.0.0', port=500)
