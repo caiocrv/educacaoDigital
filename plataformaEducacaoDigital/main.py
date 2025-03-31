@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, redirect, url_for
 
 import json
 import unicodedata
@@ -26,7 +26,7 @@ def login():
     if username != userRegistration.get("username") or password != userRegistration.get("password"):
         return render_template('login.html', error="Senha ou usuário incorreto")
     
-    return render_template('home.html')
+    return redirect(url_for('home'))
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
@@ -76,7 +76,7 @@ def register():
                 return render_template('login.html')
             else:
                 print("Senha não contém nível de dificuldade suficiente")
-                return render_template('register.html', error="As senhas não coincidem.")
+                return render_template('register.html', error="Senha não possiu dificuldade mínima permitida")
 
         else:
             return render_template('register.html', error="As senhas não coincidem.")
@@ -86,6 +86,7 @@ def register():
 
 @app.route("/home", methods=['GET', 'POST'])
 def home():
+    print("BEM VINDO, VOCÊ ESTÁ NA PÁGINA HOME")
     return render_template('home.html')
 
 

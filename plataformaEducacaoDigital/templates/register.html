@@ -4,26 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <script>
-        function validarSenha(event) {
-            var senha = document.getElementById("password").value;
-            var confirmarSenha = document.getElementById("confirmPassword").value;
-
-            if (senha !== confirmarSenha) {
-                alert("⚠️ As senhas não coincidem! Por favor, digite novamente.");
-                event.preventDefult();
-                return false;
-            }
-            else {
-                return home.html
-            }
-        }
-    </script>
 </head>
 <body>
     <h2>Cadastrar conta</h2>
 
-    <form action="/register" method="post" onsubmit="return validarSenha(event)"
+    <form action="/register" method="post" onsubmit="return validarSenha(event)">
         <label for="username">Usuário</label>
         <input type="text" id="username" name="username" required>
 
