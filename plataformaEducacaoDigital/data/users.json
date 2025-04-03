@@ -1,4 +1,22 @@
-{
-    "username": "caio",
-    "password": "Caio@123"
-}
+[
+    {
+        "id": "d13c7d71-4dfb-45b8-a73d-1201f885d433",
+        "username": "user1",
+        "password": "password1"
+    },
+    {
+        "id": "6a19fca2-3f61-46fb-b98d-8d498df8d1f2",
+        "username": "user2",
+        "password": "password2"
+    },
+    {
+        "id": "e48b7510-346c-4045-9cdd-39d9f925ebf3",
+        "username": "caio",
+        "password": "Teste@123"
+    },
+    {
+        "id": "902a5140-cbc2-4f40-bb1b-7a2b7daadfb8",
+        "username": "caiocrv",
+        "password": "Caio@123"
+    }
+]

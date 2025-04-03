@@ -25,6 +25,10 @@
         <br><br>
         
         <button type="submit">Cadastrar</button>
+        
+        {% if error %}
+        <p style="color: red;">{{ error }}</p>
+        {% endif %}
     </form>
 </body>
 </html>

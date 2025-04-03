@@ -26,5 +26,8 @@
         Criar Cadastro
       </button>
     </a>
+    {% if error %}
+    <p style="color: red;">{{ error }}</p>
+    {% endif %}
 </body>
 </html>
