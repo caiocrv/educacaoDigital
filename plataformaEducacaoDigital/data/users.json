@@ -10,13 +10,13 @@
         "password": "password2"
     },
     {
-        "id": "e48b7510-346c-4045-9cdd-39d9f925ebf3",
+        "id": "38350f60-73e8-477d-9609-881180d870ce",
         "username": "caio",
-        "password": "Teste@123"
+        "password": "$argon2id$v=19$m=65536,t=3,p=4$dR06q0JbxU5C173UPKhstA$1JCZgq9ok34J/ciNnA4SwUBUHoU5rv3tcBPiC47uPT8"
     },
     {
-        "id": "902a5140-cbc2-4f40-bb1b-7a2b7daadfb8",
-        "username": "caiocrv",
-        "password": "Caio@123"
+        "id": "2bc117bb-c3bf-4778-9c32-b09f88cc6aff",
+        "username": "teste",
+        "password": "$argon2id$v=19$m=65536,t=3,p=4$0GN5uic0wJJuLJbqTaZKSg$EFH1ZFjtF0uvW9WCPAskhvYIxLayLLNs9q2j7EutqIk"
     }
 ]
