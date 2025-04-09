@@ -1,14 +1,15 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, make_response, session
 from argon2 import PasswordHasher
 import jwt
 import datetime
-
+import pytz
 import uuid
 import json
 import unicodedata
 
 ph = PasswordHasher()
 app = Flask(__name__)
+SECRET_KEY = "123"
 
 @app.route("/")
 def index():
@@ -43,13 +44,18 @@ def login():
     payload = {
         "user_id":user['id'],
         "user_name":user['username'],
-        "exp": datetime.datetime.utcnow() + datetime.timedelta(hours=24)  # Token expira em 24 hora
+        "exp": datetime.datetime.now(pytz.utc) + datetime.timedelta(hours=12) # Token expira em 12 hora
     }
 
-    token = jwt.encode(payload, "123", algorithm="HS256")
+    print("Gerando token")
+    token = jwt.encode(payload, SECRET_KEY, algorithm="HS256")
     print(token)
 
-    return render_template('home.html')
+    # Armazenando o token em um cookie
+    response = make_response(redirect(url_for('home')))
+    response.set_cookie("auth_token", token)
+
+    return response
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
@@ -91,8 +97,8 @@ def register():
                 users_data = []
 
             if any(user['username'] == username for user in users_data):
-                print("Usuário já existe")
-                return render_template('register.html', error="Usuário já existe.")
+                print("Usuário já está sendo utilizado")
+                return render_template('register.html', error="Usuário já está sendo utilizado")
             
 
             user_id = str(uuid.uuid4())  # Gerando um UUID único
@@ -124,7 +130,21 @@ def register():
 @app.route("/home", methods=['GET', 'POST'])
 def home():
     print("BEM VINDO, VOCÊ ESTÁ NA PÁGINA HOME")
-    return render_template('home.html')
+    
+    # Verificar se o token existe nos cookies
+    token = request.cookies.get('auth_token')
+    
+    if token:
+        try:
+            jwt.decode(token, "123", algorithms=["HS256"])
+            return render_template('home.html')
+            
+        except jwt.ExpiredSignatureError:
+            return redirect(url_for('index', error="Sessão expirou. Faça login novamente."))
+        except jwt.InvalidTokenError:
+            return redirect(url_for('index', error="Token inválido."))
+    else:
+        return redirect(url_for('index', error="Você precisa estar logado para acessar esta página."))
 
 
 

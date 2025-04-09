@@ -18,5 +18,20 @@
         "id": "2bc117bb-c3bf-4778-9c32-b09f88cc6aff",
         "username": "teste",
         "password": "$argon2id$v=19$m=65536,t=3,p=4$0GN5uic0wJJuLJbqTaZKSg$EFH1ZFjtF0uvW9WCPAskhvYIxLayLLNs9q2j7EutqIk"
+    },
+    {
+        "id": "f8cc6b77-0294-403c-96ab-1b4229d598b1",
+        "username": "CAIO",
+        "password": "$argon2id$v=19$m=65536,t=3,p=4$CW1Pii1leezlp2m66h4nfg$lk+qHIA/NkQqriHhoMLY6GrEN6WDVcKnEy4IoPQquR0"
+    },
+    {
+        "id": "4ddb6743-e6a3-4bce-8093-711b4277d0c7",
+        "username": "caiocrv",
+        "password": "$argon2id$v=19$m=65536,t=3,p=4$hnab+eONCiH5+mo2vcjA5w$9lEM/YLl+194wQtKZTJo64ZhNwlBZmXWHgZ+JWUb70Q"
+    },
+    {
+        "id": "a7e67109-1fd0-49e9-94ed-01b15cee80f7",
+        "username": "julia",
+        "password": "$argon2id$v=19$m=65536,t=3,p=4$rq7r8NyxXqXfeMadW5Otbw$o4S6tgY7l47/xHzyie+ho+A+nIY/TG1N+aK9b7hZlvQ"
     }
 ]
