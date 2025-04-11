@@ -33,5 +33,10 @@
         "id": "a7e67109-1fd0-49e9-94ed-01b15cee80f7",
         "username": "julia",
         "password": "$argon2id$v=19$m=65536,t=3,p=4$rq7r8NyxXqXfeMadW5Otbw$o4S6tgY7l47/xHzyie+ho+A+nIY/TG1N+aK9b7hZlvQ"
+    },
+    {
+        "id": "7f4a00da-8e50-44a5-98ec-5a49a6a6c95c",
+        "username": "caiox",
+        "password": "$argon2id$v=19$m=65536,t=3,p=4$UnZEPzA6PkHk1o7NJl9dgw$GO8RUwuVIbMJ6pbLlg0KVIBj5Tk36u4vw2LjtrUdBEo"
     }
 ]

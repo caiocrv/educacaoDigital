@@ -10,18 +10,15 @@ function validarSenha(event) {
     var characterUpper = 0
     var qtdCharacter = 0
 
-    console.log("VERIFICANDO SENHA");
     if (password == confirmPassword) 
     {
-        console.log("VERIFICANDO NÍVEL DA SENHA");
-        for (var i = 0; character <= i; i += 1) 
+        for (var i = 0; i < character; i += 1) 
         {
-            alert(password[i]);
             qtdCharacter += 1
             if (password.charAt(i) === ' ')
             {
                 alert("⚠️ Senha não pode conter espaço.");
-                event.preventDefult();
+                event.preventDefault();
                 return false
             }
             else if (password[i] == "@" || password[i] == "#" || password[i] == "?" || password[i] == "!" || password[i] == "&") {
@@ -36,10 +33,10 @@ function validarSenha(event) {
         if (characterSpecial < 1) 
         {
             alert("⚠️ Senha não contém nenhum caractere especial. Tente utilizar @, #, ?, ! ou &.")
-            event.preventDefult();
+            event.preventDefault();
             return false
         }
-        else if (qtdCharacter < 6)  
+        else if (qtdCharacter < 6)
         {
             alert("⚠️ Senha não contém quantidade mínima de caracteres.")
             event.preventDefault();

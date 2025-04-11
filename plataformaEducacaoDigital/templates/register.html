@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>Register</title> 
 </head>
 <body>
     <h2>Cadastrar conta</h2>
@@ -19,7 +19,7 @@
         
         <br><br>
 
-        <label for="password">Confirma Senha</label>
+        <label for="confirmPassword">Confirma Senha</label>
         <input type="password" id="confirmPassword" name="confirmPassword" required>
 
         <br><br>
@@ -30,5 +30,7 @@
         <p style="color: red;">{{ error }}</p>
         {% endif %}
     </form>
+
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
 </body>
 </html>
