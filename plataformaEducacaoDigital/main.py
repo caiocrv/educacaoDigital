@@ -116,7 +116,7 @@ def register():
             # Inserindo usuário e senha no arquivo JSON
             with open("plataformaEducacaoDigital/data/users.json", "w", encoding="utf-8") as arquivo:
                 json.dump(users_data, arquivo, indent=4, ensure_ascii=False)
-            
+                
             print(user_data)
 
             return render_template('login.html')
