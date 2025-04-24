@@ -1,3 +1,4 @@
+// Inutilizado
 function validarSenha(event) {
     var password = document.getElementById("password").value;
     var confirmPassword = document.getElementById("confirmPassword").value;
@@ -50,7 +51,7 @@ function validarSenha(event) {
         }
         else
         {
-            alert("Usuário cadastrado")
+            alert("Usuário cadastrado com sucesso!")
         }
     }
     else{
