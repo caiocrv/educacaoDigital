@@ -5,7 +5,7 @@ import datetime
 import pytz
 import uuid
 import json
-import unicodedata
+
 
 ph = PasswordHasher()
 app = Flask(__name__)
@@ -15,8 +15,12 @@ SECRET_KEY = "123"
 def index():
     return render_template('landingPage.html')
 
-@app.route("/login", methods=['POST'])
+@app.route("/login", methods=['GET', 'POST'])
 def login():
+    if request.method == 'GET':
+        # Quando o usuário apenas acessa a página /login via navegador
+        return render_template('login.html')
+        
     # Armazenando o usuário e senha na variavel
     username = request.form.get('username')
     password = request.form.get('password')
@@ -33,11 +37,14 @@ def login():
         user = next((u for u in userRegistration if u['username'] == username), None)
         
         if not user:
+            print("TESTE1")
             return render_template('login.html', error="Usuário ou senha incorreto")
         
         if not ph.verify(user['password'], password):
+            print("TESTE2")
             return render_template('login.html', error="Usuário ou senha incorreto")
     except:
+        print("TESTE3")
         return render_template('login.html', error="Usuário ou senha incorreto")
 
     # Gerando Token de acesso, usado para verificar a sessão do usuário
@@ -55,6 +62,7 @@ def login():
     response = make_response(redirect(url_for('home')))
     response.set_cookie("auth_token", token)
 
+    print("testando return")
     return response
 
 @app.route("/register", methods=['GET', 'POST'])
@@ -119,12 +127,11 @@ def register():
                 
             print(user_data)
 
-            return render_template('login.html')
+            return render_template('login.html', error="Usuário cadastrado com sucesso!")
         else:
             print("Senha não contém nível de dificuldade suficiente")
             return render_template('register.html', error="Senha não possiu dificuldade mínima permitida")
                    
-
     return render_template('register.html')
 
 @app.route("/home", methods=['GET', 'POST'])
