@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz de Python</title>
+</head>
+<body>
+  <h2>Quiz de Cibersegurança</h2>
+  <form id="quizForm">
+    <ol>
+      <li>
+        <label>1. O que é phishing?</label><br>
+        <input type="text" name="q1" required>
+      </li><br>
+
+      <li>
+        <label>2. Qual dessas senhas é considerada forte?</label><br>
+        <input type="text" name="q2" required>
+      </li><br>
+
+      <li>
+        <label>3. O que significa autenticação de dois fatores (2FA)?</label><br>
+        <input type="text" name="q3" required>
+      </li><br>
+
+      <li>
+        <label>4. Um software que detecta e remove vírus é chamado de?</label><br>
+        <input type="text" name="q4" required>
+      </li><br>
+
+      <li>
+        <label>5. O que é um ransomware?</label><br>
+        <input type="text" name="q5" required>
+      </li><br>
+    </ol>
+    <button type="submit">Enviar Respostas</button>
+  </form>
+
+  <h3>Resultado:</h3>
+  <pre id="jsonOutput"></pre>
+
+  <script>
+    const form = document.getElementById('quizForm');
+    const jsonOutput = document.getElementById('jsonOutput');
+  
+    const respostasCorretas = {
+        q1: 'ataque de engenharia social',
+        q2: 'S3nh@F0rte!',
+        q3: 'duas formas de verificação',
+        q4: 'antivírus',
+        q5: 'software de sequestro de dados'
+    };
+  
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+  
+      const formData = new FormData(form);
+      let acertos = 0;
+  
+      for (let [key, value] of formData.entries()) {
+        const resposta = value.trim().toLowerCase();
+        if (resposta === respostasCorretas[key]) {
+          acertos++;
+        }
+      }
+  
+      const resultado = { acertos: acertos };
+  
+      // Exibe o resultado no navegador
+      jsonOutput.textContent = JSON.stringify(resultado, null, 2);
+  
+      // Envia os acertos para o backend (Flask)
+      fetch('/quizCybersecurity', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(resultado)
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log("Resposta do servidor:", data);
+      })
+      .catch(error => {
+        console.error("Erro ao enviar acertos:", error);
+      });
+  
+      form.reset();
+    });
+  </script>
+</body>
+</html>
