@@ -68,5 +68,12 @@
         "id": "aac70157-f84a-418c-a7b9-451660ae5f86",
         "username": "cadastro",
         "password": "$argon2id$v=19$m=65536,t=3,p=4$7gcSqoRB3b+2XdZ0456Y2g$R8XtCGK40TsuGaXNPF82ucJ7ydSrla7SoUvuBtfFXhY"
+    },
+    {
+        "id": "b6dd7d61-9867-4f49-9513-98b6473629d7",
+        "username": "userTeste",
+        "password": "$argon2id$v=19$m=65536,t=3,p=4$6PH5uHLAnfnBark9KNrI3g$vviA//QFP0EYl8fQjRyWkV1lz4h+QzQajrADfiihBp0",
+        "hitQuizPython": 5,
+        "hitQuizCybersecurity": 3
     }
 ]

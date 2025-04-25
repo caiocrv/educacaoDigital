@@ -37,14 +37,11 @@ def login():
         user = next((u for u in userRegistration if u['username'] == username), None)
         
         if not user:
-            print("TESTE1")
             return render_template('login.html', error="Usuário ou senha incorreto")
         
         if not ph.verify(user['password'], password):
-            print("TESTE2")
             return render_template('login.html', error="Usuário ou senha incorreto")
     except:
-        print("TESTE3")
         return render_template('login.html', error="Usuário ou senha incorreto")
 
     # Gerando Token de acesso, usado para verificar a sessão do usuário
@@ -153,7 +150,106 @@ def home():
     else:
         return redirect(url_for('index', error="Você precisa estar logado para acessar esta página."))
 
+@app.route("/quizPython", methods=['GET', 'POST'])
+def quizPython():
+    if request.method == 'GET':
+        # Quando o usuário apenas acessa a página /login via navegador
+        return render_template('quizPython.html')
+    
+    token = request.cookies.get('auth_token')
 
+    if not token:
+        return {"error": "Não autenticado"}, 401
+    
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=["HS256"])
+        user_id = payload["user_id"]
+    except jwt.ExpiredSignatureError:
+        return {"error", "Token expirado"}, 403
+    except jwt.InvalidTokenError:
+        return {"error", "Token expirado"}, 403
+
+    dados = request.get_json()
+    acertosQuizPython = dados.get("acertos", 0)
+
+    with open("plataformaEducacaoDigital/data/users.json", "r", encoding="utf-8") as arquivo:
+        usuarios = json.load(arquivo)
+
+    for usuario in usuarios:
+        if usuario["id"] == user_id:
+            usuario["hitQuizPython"]  = acertosQuizPython
+            break
+
+    with open("plataformaEducacaoDigital/data/users.json", "w", encoding="utf-8") as arquivo:
+        json.dump(usuarios, arquivo, indent=4, ensure_ascii=False)
+
+    return {"mensagem": "Acertos salvos com sucesso"}
+
+@app.route("/quizCybersecurity", methods=['GET', 'POST'])
+def quizCybersecurity():
+    if request.method == 'GET':
+        # Quando o usuário apenas acessa a página /login via navegador
+        return render_template('quizCybersecurity.html')
+    
+    token = request.cookies.get('auth_token')
+
+    if not token:
+        return {"error": "Não autenticado"}, 401
+    
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=["HS256"])
+        user_id = payload["user_id"]
+    except jwt.ExpiredSignatureError:
+        return {"error", "Token expirado"}, 403
+    except jwt.InvalidTokenError:
+        return {"error", "Token expirado"}, 403
+
+    dados = request.get_json()
+    acertosQuizCybersecurity = dados.get("acertos", 0)
+
+    with open("plataformaEducacaoDigital/data/users.json", "r", encoding="utf-8") as arquivo:
+        usuarios = json.load(arquivo)
+
+    for usuario in usuarios:
+        if usuario["id"] == user_id:
+            usuario["hitQuizCybersecurity"]  = acertosQuizCybersecurity
+            break
+
+    with open("plataformaEducacaoDigital/data/users.json", "w", encoding="utf-8") as arquivo:
+        json.dump(usuarios, arquivo, indent=4, ensure_ascii=False)
+
+    return {"mensagem": "Acertos salvos com sucesso"}
+
+@app.route("/averageHit", methods=['GET', 'POST'])
+def averageHit():
+    token = request.cookies.get('auth_token')
+
+    if not token:
+        return {"error": "Não autenticado"}, 401
+    
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=["HS256"])
+        user_id = payload["user_id"]
+    except jwt.ExpiredSignatureError:
+        return {"error", "Token expirado"}, 403
+    except jwt.InvalidTokenError:
+        return {"error", "Token expirado"}, 403
+    
+    with open("plataformaEducacaoDigital/data/users.json", "r", encoding="utf-8") as arquivo:
+        usuarios = json.load(arquivo)
+
+    for user in usuarios:
+        if user["id"] == user_id:
+            python = user.get("hitQuizPython")
+            cyber = user.get("hitQuizCybersecurity")
+            media = (python + cyber) / 2
+            return {
+                "hitQuizPython": python,
+                "hitQuizCybersecurity": cyber,
+                "media": media
+            }
+
+    return {"error": "Usuário não encontrado"}, 404
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=500, debug=True)
