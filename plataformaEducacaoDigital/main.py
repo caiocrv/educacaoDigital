@@ -11,7 +11,7 @@ ph = PasswordHasher()
 app = Flask(__name__)
 SECRET_KEY = "123"
 
-@app.route("/")
+@app.route("/", methods=['GET'])
 def index():
     return render_template('landingPage.html')
 
@@ -240,8 +240,8 @@ def averageHit():
 
     for user in usuarios:
         if user["id"] == user_id:
-            python = user.get("hitQuizPython")
-            cyber = user.get("hitQuizCybersecurity")
+            python = user.get("hitQuizPython", 0)
+            cyber = user.get("hitQuizCybersecurity", 0)
             media = (python + cyber) / 2
             return {
                 "hitQuizPython": python,
@@ -250,6 +250,12 @@ def averageHit():
             }
 
     return {"error": "Usuário não encontrado"}, 404
+
+@app.route("/landingPage", methods=['GET'])
+def landingPage():
+    if request.method == 'GET':
+        # Quando o usuário apenas acessa a página /landingPage via navegador
+        return render_template('landingPage.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=500, debug=True)
