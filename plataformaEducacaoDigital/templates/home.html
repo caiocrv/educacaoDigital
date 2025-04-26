@@ -4,9 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <center><H1>BEM VINDO</H1></center> 
-    <h2> teste git </h2>
+    <a href="/quizPython">quizPython</a>
+    <br>
+    <a href="/quizCybersecurity">quizCybersecurity</a>
+    <br><br>
+    <h2>Média de Acertos dos Quizzes</h2>
+    <canvas id="graficoMedia" width="400" height="200"></canvas>
+
+    <script>
+        fetch('/averageHit')
+        .then(res => res.json())
+        .then(data => {
+            const ctx = document.getElementById('graficoMedia').getContext('2d');
+            new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Python', 'Cibersegurança', 'Média'],
+                datasets: [{
+                label: 'Acertos',
+                data: [
+                    data.hitQuizPython,
+                    data.hitQuizCybersecurity,
+                    data.media
+                ],
+                backgroundColor: ['#4caf50', '#2196f3', '#ff9800']
+                }]
+            },
+            options: {
+                scales: {
+                y: {
+                    beginAtZero: true,
+                    precision: 0
+                }
+                }
+            }
+            });
+        });
+    </script>
 </body>
 </html>
