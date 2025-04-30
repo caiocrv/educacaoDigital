@@ -75,5 +75,11 @@
         "password": "$argon2id$v=19$m=65536,t=3,p=4$6PH5uHLAnfnBark9KNrI3g$vviA//QFP0EYl8fQjRyWkV1lz4h+QzQajrADfiihBp0",
         "hitQuizPython": 5,
         "hitQuizCybersecurity": 3
+    },
+    {
+        "id": "43531f50-aefc-46ba-a916-11dac010def2",
+        "username": "reiner",
+        "password": "$argon2id$v=19$m=65536,t=3,p=4$3OB4p54JOz0mKq7o4mU3ug$W/8H/DYx0nOwr0jJKAzPwtg4ntwpbaD0hO6M0I0DsIQ",
+        "hitQuizPython": 3
     }
 ]

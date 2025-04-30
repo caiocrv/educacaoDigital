@@ -59,7 +59,6 @@ def login():
     response = make_response(redirect(url_for('home')))
     response.set_cookie("auth_token", token)
 
-    print("testando return")
     return response
 
 @app.route("/register", methods=['GET', 'POST'])
@@ -256,6 +255,13 @@ def landingPage():
     if request.method == 'GET':
         # Quando o usuário apenas acessa a página /landingPage via navegador
         return render_template('landingPage.html')
+    
+@app.route("/logout", methods=['GET', 'POST'])
+def logout():
+    response = make_response(redirect(url_for("landingPage")))
+    response.set_cookie("auth_token", "", expires=0)
+
+    return response
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=500, debug=True)
