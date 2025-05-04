@@ -3,42 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+
 </head>
 <body>
-    <h2>Login</h2>
+  <header>
+    <div id="title">
+      <img src="{{ url_for('static', filename='logo.png') }}" class="image-login" alt="logo" width="120" height="120">
+    </div>
+  </header>
+    <div class= "main-login">
+      <div class= "leftLogin">
+        <h1>Faça seu Login <br> <span> E entre para nosso time!</span></h1>
+        <img src="{{ url_for('static', filename='icon-landingPage.png') }}" alt="personagem do site" width="310" height="310">
+      </div>
+      <div class= "right-login">
+        <div class="card-login">
+          <h1>LOGIN</h1>
+          <form action="/login" method="post">
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" name="username" placeholder="Usuário" required>  
 
-    <form action="/login" method="post">
-        <label for="username">Usuário:</label>
-        <input type="text" id="username" name="username" required>
+            <br><br>
 
-        <br><br>
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" placeholder="Senha" required>
 
-        <label for="password">Senha:</label>
-        <input type="password" id="password" name="password" required>
-        
-        <br><br>
+            <br><br>
 
-        <button type="submit">Entrar</button>
-    </form>
-    <a href="/register">
-      <button>
-        Criar Cadastro
-      </button>
-    </a>
-    {% if error %}
-      <div id="erro-backend" data-msg="{{ error }}"></div>
-    {% endif %}
-    <script>
-      window.onload = function() {
-          var erroDiv = document.getElementById("erro-backend");
-          if (erroDiv) {
-              var mensagem = erroDiv.getAttribute("data-msg");
-              if (mensagem) {
-                  alert(mensagem);
-              }
-          }
-      }
-    </script>
+            <button type="submit">Login</button>
+
+            <br><br>
+
+            <p>Ainda não tem uma conta? Cadastre-se!</p>
+          </form>
+          <a href="/register">
+            <button>
+              Criar Cadastro
+            </button>
+          </a>
+          {% if error %}
+            <div id="erro-backend" data-msg="{{ error }}"></div>
+          {% endif %}
+          <script>
+            window.onload = function() {
+                var erroDiv = document.getElementById("erro-backend");
+                if (erroDiv) {
+                    var mensagem = erroDiv.getAttribute("data-msg");
+                    if (mensagem) {
+                        alert(mensagem);
+                    }
+                }
+            }
+          </script>
+        </div>
+      </div>
+  </div> 
 </body>
 </html>
