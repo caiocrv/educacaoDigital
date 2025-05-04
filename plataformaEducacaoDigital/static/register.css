@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+body{
+    background:linear-gradient(to right, #e1e5f0, #d0aef5);
+    color: #1e3a8a;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+    font-family: "Poppins", sans-serif;    
+}
+
+.main-Cadastro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.left-cad{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+}
+
+.right-cad{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-cadastro{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px;
+    background: #c9a2f3;
+    border-radius: 20px;
+    margin-top: 10px;
+    line-height: 17px;
+}
+
+input{
+    width: 100%;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    background: #b97ff7;
+    outline: none;
+    box-sizing: border-box;
+}
+
+input::placeholder{
+    color: #8e2cf7;
+}
+
+button{
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-sizing: border-box;
+    color: #1e3a8a;
+    font-weight: bold;
+    background-color: #e4d2f7;
+}
+
+span{
+    color:#6941ad ;
+}
