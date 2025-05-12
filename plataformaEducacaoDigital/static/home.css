@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+    background:linear-gradient(to right, #e1e5f0, #d0aef5);
+    color: #1e3a8a;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+header{
+    background-color: #b272f7;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    width: 100%;
+}
+
+li{
+    display: inline-block;
+    margin: 20px;
+}
+
+li:hover{
+    color: whitesmoke;
+    transition: 0.3s;
+}
+
+main{
+  padding: 2rem;
+}
+
+.banner{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 6rem;
+    line-height: 0.5px;
+}
+
+.banner-texto h1{
+  font-size: 30px;
+}
+
+.banner-texto p {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+span{
+    color: #9029ff;
+}
+
+.cursos{
+  line-height: 0.5px;
+  margin-bottom: 2rem;
+}
+
+.cursos h2{
+  text-align: center;
+}
+
+.cursos p{
+  font-size: 15px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.cursos-conteiner{
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.card {
+  background-color: #a65ff1;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  color: #1e3a8a;
+  margin-bottom: 1rem;
+}
+
+button{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-sizing: border-box;
+    color: #1e3a8a;
+    font-weight: bold;
+    background-color: #e4d2f7;
+}
+
+footer {
+  background-color: #b272f7;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  border-top: 2px solid #a160e5;
+}
+

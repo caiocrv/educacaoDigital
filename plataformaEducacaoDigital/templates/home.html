@@ -1,51 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="PT-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Dev Start - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
 </head>
 <body>
-    <a href="/quizPython">quizPython</a>
-    <br>
-    <a href="/quizCybersecurity">quizCybersecurity</a>
-    <br><br>
-    <br>
-    <a href="/logout">SAIR</a>
-    <br><br>
-    <h2>Média de Acertos dos Quizzes</h2>
-    <canvas id="graficoMedia" width="400" height="200"></canvas>
+    <header>
+    <div class="navbar">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="logo" width="90" height="90">
+    </div>
+    <ul>
+        <li>Inicio</li>
+        <li>Cursos</li>
+        <li>Sobre</li>
+    </ul>
+    </header>
 
-    <script>
-        fetch('/averageHit')
-        .then(res => res.json())
-        .then(data => {
-            const ctx = document.getElementById('graficoMedia').getContext('2d');
-            new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['Python', 'Cibersegurança', 'Média'],
-                datasets: [{
-                label: 'Acertos',
-                data: [
-                    data.hitQuizPython,
-                    data.hitQuizCybersecurity,
-                    data.media
-                ],
-                backgroundColor: ['#4caf50', '#2196f3', '#ff9800']
-                }]
-            },
-            options: {
-                scales: {
-                y: {
-                    beginAtZero: true,
-                    precision: 0
-                }
-                }
-            }
-            });
-        });
-    </script>
+    <main>
+        <section class="banner">
+            <div class="banner-texto">
+                <h1>Bem-vindo à plataforma DevStart!</h1><br>
+                <p><span>Aprenda de forma gratuita e prática!</span></p>
+            </div>
+        </section>
+
+        <section class="cursos">
+            <h2>Cursos disponiveis</h2><br>
+            <p><span>Explore cada linha de conhecimento disponiveis nos cursos abaixo!</span></p>
+            <div class="cursos-conteiner">
+                <div class="card">
+                    <h3>Lógica de Programação</h3>
+                    <!--inserir imagem aqui-->
+                    <a href="#">
+                        <button>Acessar</button>
+                    </a>
+                </div>
+                <div class="card">
+                    <h3>Phyton para iniciantes</h3>
+                    <img src="{{ url_for('static', filename='logo-phyton.png') }}" alt="logo" width="90" height="90">
+                    <a href="#">
+                        <button>Acessar</button>
+                    </a>
+                </div>
+                <div class="card">
+                    <h3>HTML para iniciantes</h3>
+                    <!--inserir imagem aqui-->
+                    <a href="#">
+                        <button>Acessar</button>
+                    </a>
+                </div>
+                <div class="card">
+                    <h3>CSS para iniciantes</h3>
+                    <!--inserir imagem aqui-->
+                    <a href="#">
+                        <button>Acessar</button>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 DevStart | Todos os direitos reservados</p>
+    </footer>
 </body>
 </html>
