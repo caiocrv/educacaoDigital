@@ -81,5 +81,10 @@
         "username": "reiner",
         "password": "$argon2id$v=19$m=65536,t=3,p=4$3OB4p54JOz0mKq7o4mU3ug$W/8H/DYx0nOwr0jJKAzPwtg4ntwpbaD0hO6M0I0DsIQ",
         "hitQuizPython": 3
+    },
+    {
+        "id": "9c804a57-e2d8-4531-844e-017c1a173bb1",
+        "username": "khim",
+        "password": "$argon2id$v=19$m=65536,t=3,p=4$5WEUi8jC+jTALKNtiYAZEA$lvquE+2JAfcCu90H6FP0KcUcP4DwUv4QnpEgcjLfAqs"
     }
 ]
