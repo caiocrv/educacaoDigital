@@ -34,6 +34,8 @@
       </li><br>
     </ol>
     <button type="submit">Enviar Respostas</button>
+    <br><br>
+    <a href="/home">Conteúdos</a>
   </form>
 
   <h3>Resultado:</h3>
@@ -42,35 +44,38 @@
   <script>
     const form = document.getElementById('quizForm');
     const jsonOutput = document.getElementById('jsonOutput');
-  
+
     const respostasCorretas = {
-        q1: 'ataque de engenharia social',
-        q2: 'S3nh@F0rte!',
-        q3: 'duas formas de verificação',
-        q4: 'antivírus',
-        q5: 'software de sequestro de dados'
+      q1: 'ataque de engenharia social',
+      q2: 'S3nh@F0rte!',
+      q3: 'duas formas de verificação',
+      q4: 'antivírus',
+      q5: 'software de sequestro de dados'
     };
-  
+
     form.addEventListener('submit', function(event) {
       event.preventDefault();
-  
+
       const formData = new FormData(form);
       let acertos = 0;
-  
+
       for (let [key, value] of formData.entries()) {
         const resposta = value.trim().toLowerCase();
         if (resposta === respostasCorretas[key]) {
           acertos++;
         }
       }
-  
-      const resultado = { acertos: acertos };
-  
-      // Exibe o resultado no navegador
+
+      const resultado = {
+        quiz: "Cibersegurança",
+        acertos: acertos,
+        total: Object.keys(respostasCorretas).length,
+        data: new Date().toISOString()
+      };
+
       jsonOutput.textContent = JSON.stringify(resultado, null, 2);
-  
-      // Envia os acertos para o backend (Flask)
-      fetch('/quizCybersecurity', {
+
+      fetch('/saveReviews', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -84,7 +89,7 @@
       .catch(error => {
         console.error("Erro ao enviar acertos:", error);
       });
-  
+
       form.reset();
     });
   </script>

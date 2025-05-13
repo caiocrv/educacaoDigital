@@ -9,7 +9,9 @@
 <body>
   <header>
     <div id="title">
-      <img src="{{ url_for('static', filename='logo.png') }}" alt="logo" width="120" height="120">
+      <a href="/landingPage">
+        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo" width="120" height="120">
+      </a> 
     </div>
 
     <ul>
@@ -27,7 +29,7 @@
     </aside>
 
     <article>
-      <img src="{{ url_for('static', filename='icon-landingPage.png') }}" alt="personagem do site" width="400" height="400">
+      <img src="{{ url_for('static', filename='img/icon-landingPage.png') }}" alt="personagem do site" width="400" height="400">
     </article>
   </main>
 </body>

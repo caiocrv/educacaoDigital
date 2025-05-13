@@ -1,0 +1,38 @@
+[
+    {
+        "user_id": "38350f60-73e8-477d-9609-881180d870ce",
+        "username": "caio",
+        "avaliacoes": [
+            {
+                "quiz": "Python",
+                "acertos": 4,
+                "total": 5,
+                "data": "2025-05-13T01:56:06.543Z"
+            },
+            {
+                "quiz": "Python",
+                "acertos": 4,
+                "total": 5,
+                "data": "2025-05-13T02:57:11.432Z"
+            }
+        ]
+    },
+    {
+        "user_id": "09a058af-2c20-44c3-a155-1cb251e99fca",
+        "username": "jjulia",
+        "avaliacoes": [
+            {
+                "quiz": "Python",
+                "acertos": 4,
+                "total": 5,
+                "data": "2025-05-13T03:06:46.576Z"
+            },
+            {
+                "quiz": "Cibersegurança",
+                "acertos": 3,
+                "total": 5,
+                "data": "2025-05-13T03:11:06.541Z"
+            }
+        ]
+    }
+]

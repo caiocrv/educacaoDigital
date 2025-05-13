@@ -9,14 +9,16 @@
 <body>
   <header>
     <div id="title">
-      <img src="{{ url_for('static', filename='logo.png') }}" class="image-login" alt="logo" width="120" height="120">
+      <a href="/landingPage">
+        <img src="{{ url_for('static', filename='img/logo.png') }}" class="image-login" alt="logo" width="120" height="120">
+      </a>
     </div>
   </header>
 
     <div class= "main-login">
       <div class= "leftLogin">
         <h1>Faça seu Login <br> <span> E entre para nosso time!</span></h1>
-        <img src="{{ url_for('static', filename='icon-landingPage.png') }}" alt="personagem do site" width="310" height="310">
+        <img src="{{ url_for('static', filename='img/icon-landingPage.png') }}" alt="personagem do site" width="310" height="310">
       </div>
       <div class= "right-login">
         <div class="card-login">

@@ -9,12 +9,14 @@
 <body>
     <header>
     <div class="navbar">
-            <img src="{{ url_for('static', filename='logo.png') }}" alt="logo" width="90" height="90">
+        <a href="/landingPage">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo" width="120" height="120">
+        </a>
     </div>
     <ul>
-        <li>Inicio</li>
-        <li>Cursos</li>
-        <li>Sobre</li>
+        <li><a href="/home">Cursos</a></li>
+        <li><a href="/about">Sobre</a></li>
+        <li><a href="/logout">Sair</a></li>
     </ul>
     </header>
 
@@ -32,38 +34,75 @@
             <div class="cursos-conteiner">
                 <div class="card">
                     <h3>Lógica de Programação</h3>
-                    <!--inserir imagem aqui-->
+                    <img src="{{ url_for('static', filename='img/logo-logica.png') }}" alt="logo" width="90" height="90">
                     <a href="#">
                         <button>Acessar</button>
                     </a>
                 </div>
                 <div class="card">
-                    <h3>Phyton para iniciantes</h3>
-                    <img src="{{ url_for('static', filename='logo-phyton.png') }}" alt="logo" width="90" height="90">
-                    <a href="#">
+                    <h3>Phyton</h3>
+                    <img src="{{ url_for('static', filename='img/logo-python.png') }}" alt="logo" width="90" height="90">
+                    <a href="/quizPython">
                         <button>Acessar</button>
                     </a>
                 </div>
                 <div class="card">
                     <h3>HTML para iniciantes</h3>
-                    <!--inserir imagem aqui-->
+                    <img src="{{ url_for('static', filename='img/logo-html.png') }}" alt="logo" width="90" height="90">
                     <a href="#">
                         <button>Acessar</button>
                     </a>
                 </div>
                 <div class="card">
-                    <h3>CSS para iniciantes</h3>
-                    <!--inserir imagem aqui-->
-                    <a href="#">
+                    <h3>Cibersegurança</h3>
+                    <img src="{{ url_for('static', filename='img/logo-cybersecurity.png') }}" alt="logo" width="90" height="90">
+                    <a href="/quizCybersecurity">
                         <button>Acessar</button>
                     </a>
                 </div>
             </div>
         </section>
-    </main>
 
+        
+    </main>
+    <center>
+        <h2>Média de Acertos dos Quizzes</h2>
+        <canvas id="graphicAverage" width="400" height="200"></canvas>
+    </center>
+    
     <footer>
         <p>&copy; 2025 DevStart | Todos os direitos reservados</p>
     </footer>
+
+    <script>
+        fetch('/graphicData')
+        .then(res => res.json())
+        .then(data => {
+            const labels = Object.keys(data.porQuiz);
+            const acertos = labels.map(quiz => data.porQuiz[quiz].acertos);
+            const totais = labels.map(quiz => data.porQuiz[quiz].total);
+
+            const ctx = document.getElementById('graphicAverage').getContext('2d');
+            new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: [...labels, 'Média (%)'],
+                datasets: [{
+                label: 'Acertos',
+                data: [...acertos, data.media],
+                backgroundColor: ['#4caf50', '#2196f3', '#ff9800']
+                }]
+            },
+            options: {
+                scales: {
+                y: {
+                    beginAtZero: true,
+                    precision: 0
+                }
+                }
+            }
+            });
+        });
+    </script>
 </body>
 </html>
