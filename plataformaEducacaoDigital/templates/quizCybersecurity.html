@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+  <div class="navbar">
+      <a href="/home">
+          <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo" width="120" height="120">
+      </a>
+  </div>
   <meta charset="UTF-8">
-  <title>Quiz de Python</title>
+  <title>Quiz de Cibersegurança</title>
 </head>
 <body>
   <h2>Quiz de Cibersegurança</h2>
@@ -10,27 +15,42 @@
     <ol>
       <li>
         <label>1. O que é phishing?</label><br>
-        <input type="text" name="q1" required>
+        <input type="radio" name="q1" value="ataque de engenharia social" required> Ataque de engenharia social<br>
+        <input type="radio" name="q1" value="tipo de firewall"> Tipo de firewall<br>
+        <input type="radio" name="q1" value="backup em nuvem"> Backup em nuvem<br>
+        <input type="radio" name="q1" value="criptografia"> Criptografia<br>
       </li><br>
 
       <li>
         <label>2. Qual dessas senhas é considerada forte?</label><br>
-        <input type="text" name="q2" required>
+        <input type="radio" name="q2" value="S3nh@F0rte!" required> S3nh@F0rte!<br>
+        <input type="radio" name="q2" value="123456"> 123456<br>
+        <input type="radio" name="q2" value="senha"> senha<br>
+        <input type="radio" name="q2" value="abcdef"> abcdef<br>
       </li><br>
 
       <li>
         <label>3. O que significa autenticação de dois fatores (2FA)?</label><br>
-        <input type="text" name="q3" required>
+        <input type="radio" name="q3" value="duas formas de verificação" required> Duas formas de verificação<br>
+        <input type="radio" name="q3" value="uma senha difícil"> Uma senha difícil<br>
+        <input type="radio" name="q3" value="login com Facebook"> Login com Facebook<br>
+        <input type="radio" name="q3" value="senha duplicada"> Senha duplicada<br>
       </li><br>
 
       <li>
         <label>4. Um software que detecta e remove vírus é chamado de?</label><br>
-        <input type="text" name="q4" required>
+        <input type="radio" name="q4" value="antivírus" required> Antivírus<br>
+        <input type="radio" name="q4" value="firewall"> Firewall<br>
+        <input type="radio" name="q4" value="sistema operacional"> Sistema operacional<br>
+        <input type="radio" name="q4" value="backup"> Backup<br>
       </li><br>
 
       <li>
         <label>5. O que é um ransomware?</label><br>
-        <input type="text" name="q5" required>
+        <input type="radio" name="q5" value="software de sequestro de dados" required> Software de sequestro de dados<br>
+        <input type="radio" name="q5" value="antivírus"> Antivírus<br>
+        <input type="radio" name="q5" value="programa educativo"> Programa educativo<br>
+        <input type="radio" name="q5" value="tipo de hardware"> Tipo de hardware<br>
       </li><br>
     </ol>
     <button type="submit">Enviar Respostas</button>
@@ -60,8 +80,7 @@
       let acertos = 0;
 
       for (let [key, value] of formData.entries()) {
-        const resposta = value.trim().toLowerCase();
-        if (resposta === respostasCorretas[key]) {
+        if (value.trim().toLowerCase() === respostasCorretas[key].toLowerCase()) {
           acertos++;
         }
       }

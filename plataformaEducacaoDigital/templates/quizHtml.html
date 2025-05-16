@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <div class="navbar">
+        <a href="/home">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo" width="120" height="120">
+        </a>
+    </div>
+  <meta charset="UTF-8">
+  <title>Quiz de HTML</title>
+</head>
+<body>
+  <h2>Quiz de HTML</h2>
+  <form id="quizForm">
+    <ol>
+      <li>
+        <label>1. O que significa HTML?</label><br>
+        <input type="radio" name="q1" value="HyperText Markup Language" required> HyperText Markup Language<br>
+        <input type="radio" name="q1" value="Home Tool Markup Language"> Home Tool Markup Language<br>
+        <input type="radio" name="q1" value="Hyperlinks Text Management Language"> Hyperlinks Text Management Language<br>
+        <input type="radio" name="q1" value="Hyperlink and Text Markup Logic"> Hyperlink and Text Markup Logic<br>
+      </li><br>
+
+      <li>
+        <label>2. Qual tag é usada para criar um parágrafo?</label><br>
+        <input type="radio" name="q2" value="p" required> &lt;p&gt;<br>
+        <input type="radio" name="q2" value="div"> &lt;div&gt;<br>
+        <input type="radio" name="q2" value="h1"> &lt;h1&gt;<br>
+        <input type="radio" name="q2" value="span"> &lt;span&gt;<br>
+      </li><br>
+
+      <li>
+        <label>3. Qual atributo define o link de uma tag &lt;a&gt;?</label><br>
+        <input type="radio" name="q3" value="href" required> href<br>
+        <input type="radio" name="q3" value="src"> src<br>
+        <input type="radio" name="q3" value="alt"> alt<br>
+        <input type="radio" name="q3" value="link"> link<br>
+      </li><br>
+
+      <li>
+        <label>4. Qual tag usamos para imagens?</label><br>
+        <input type="radio" name="q4" value="img" required> &lt;img&gt;<br>
+        <input type="radio" name="q4" value="src"> &lt;src&gt;<br>
+        <input type="radio" name="q4" value="image"> &lt;image&gt;<br>
+        <input type="radio" name="q4" value="pic"> &lt;pic&gt;<br>
+      </li><br>
+
+      <li>
+        <label>5. Como se comenta em HTML?</label><br>
+        <input type="radio" name="q5" value="<!-- comentário -->" required> &lt;!-- comentário --&gt;<br>
+        <input type="radio" name="q5" value="// comentário"> // comentário<br>
+        <input type="radio" name="q5" value="/* comentário */"> /* comentário */<br>
+        <input type="radio" name="q5" value="## comentário"> ## comentário<br>
+      </li><br>
+    </ol>
+    <button type="submit">Enviar Respostas</button><br><br>
+    <a href="/home">Conteúdos</a>
+  </form>
+
+  <h3>Resultado:</h3>
+  <pre id="jsonOutput"></pre>
+
+  <script>
+    const form = document.getElementById('quizForm');
+    const jsonOutput = document.getElementById('jsonOutput');
+
+    const respostasCorretas = {
+      q1: 'HyperText Markup Language',
+      q2: 'p',
+      q3: 'href',
+      q4: 'img',
+      q5: '<!-- comentário -->'
+    };
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const formData = new FormData(form);
+      let acertos = 0;
+
+      for (let [key, value] of formData.entries()) {
+        if (value.trim().toLowerCase() === respostasCorretas[key].toLowerCase()) {
+          acertos++;
+        }
+      }
+
+      const resultado = {
+        quiz: "HTML",
+        acertos: acertos,
+        total: Object.keys(respostasCorretas).length,
+        data: new Date().toISOString()
+      };
+
+      jsonOutput.textContent = JSON.stringify(resultado, null, 2);
+
+      fetch('/saveReviews', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(resultado)
+      })
+      .then(res => res.json())
+      .then(data => console.log("Resposta:", data))
+      .catch(error => console.error("Erro:", error));
+
+      form.reset();
+    });
+  </script>
+</body>
+</html>

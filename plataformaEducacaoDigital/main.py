@@ -239,6 +239,74 @@ def quizCybersecurity():
 
     return {"mensagem": "Acertos salvos com sucesso"}
 
+@app.route("/quizLogic", methods=['GET'])
+def quizLogic():
+    token = request.cookies.get('auth_token')
+
+    if not token:
+        return redirect(url_for('index', error="Não autenticado"))
+
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=["HS256"])
+        user_id = payload["user_id"]
+    except jwt.ExpiredSignatureError:
+        return redirect(url_for('index', error="Token expirado"))
+    except jwt.InvalidTokenError:
+        return redirect(url_for('index', error="Token expirado"))
+
+    if request.method == 'GET':
+        return render_template('quizLogic.html')
+    
+    dados = request.get_json()
+    acertosQuizLogic = dados.get("acertos", 0)
+
+    with open("plataformaEducacaoDigital/data/users.json", "r", encoding="utf-8") as arquivo:
+        usuarios = json.load(arquivo)
+
+    for usuario in usuarios:
+        if usuario["id"] == user_id:
+            usuario["hitQuizLogic"]  = acertosQuizLogic
+            break
+
+    with open("plataformaEducacaoDigital/data/users.json", "w", encoding="utf-8") as arquivo:
+        json.dump(usuarios, arquivo, indent=4, ensure_ascii=False)
+
+    return {"mensagem": "Acertos salvos com sucesso"}
+
+@app.route("/quizHtml", methods=['GET'])
+def quizHtml():
+    token = request.cookies.get('auth_token')
+
+    if not token:
+        return redirect(url_for('index', error="Não autenticado"))
+
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=["HS256"])
+        user_id = payload["user_id"]
+    except jwt.ExpiredSignatureError:
+        return redirect(url_for('index', error="Token expirado"))
+    except jwt.InvalidTokenError:
+        return redirect(url_for('index', error="Token expirado"))
+
+    if request.method == 'GET':
+        return render_template('quizHtml.html')
+    
+    dados = request.get_json()
+    acertosQuizHtml = dados.get("acertos", 0)
+
+    with open("plataformaEducacaoDigital/data/users.json", "r", encoding="utf-8") as arquivo:
+        usuarios = json.load(arquivo)
+
+    for usuario in usuarios:
+        if usuario["id"] == user_id:
+            usuario["hitQuizHtml"]  = acertosQuizHtml
+            break
+
+    with open("plataformaEducacaoDigital/data/users.json", "w", encoding="utf-8") as arquivo:
+        json.dump(usuarios, arquivo, indent=4, ensure_ascii=False)
+
+    return {"mensagem": "Acertos salvos com sucesso"}
+
 @app.route("/saveReviews", methods=["POST"])
 def saveReviews():
     token = request.cookies.get('auth_token')
@@ -325,23 +393,27 @@ def graphicData():
             if not avals:
                 return {"media": 0, "porQuiz": {}}
 
-            total_acertos = 0
-            total_questoes = 0
             por_quiz = {}
+            # Percorre de trás pra frente para pegar a última tentativa de cada quiz
+            for a in reversed(avals):
+                quiz = a["quiz"]
+                if quiz not in por_quiz:
+                    por_quiz[quiz] = {
+                        "acertos": a["acertos"],
+                        "total": a["total"]
+                    }
 
-            for a in avals:
-                total_acertos += a["acertos"]
-                total_questoes += a["total"]
+            # Calcula a média percentual com base apenas na última tentativa de cada quiz
+            porcentagens = []
+            for q in por_quiz.values():
+                if q["total"] > 0:
+                    porcentagens.append((q["acertos"] / q["total"]) * 100)
 
-                if a["quiz"] not in por_quiz:
-                    por_quiz[a["quiz"]] = {"acertos": 0, "total": 0}
-                por_quiz[a["quiz"]]["acertos"] += a["acertos"]
-                por_quiz[a["quiz"]]["total"] += a["total"]
-
-            media = round((total_acertos / total_questoes) * 100, 2)
+            media = round(sum(porcentagens) / len(porcentagens), 2) if porcentagens else 0
             return jsonify({"media": media, "porQuiz": por_quiz})
 
     return {"media": 0, "porQuiz": {}}
+
 
 @app.route("/logout", methods=['GET', 'POST'])
 def logout():

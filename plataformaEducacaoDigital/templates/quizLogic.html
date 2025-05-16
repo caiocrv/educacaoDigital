@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <div class="navbar">
+        <a href="/home">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo" width="120" height="120">
+        </a>
+    </div>
+  <meta charset="UTF-8">
+  <title>Quiz de Lógica de Programação</title>
+</head>
+<body>
+  <h2>Quiz de Lógica de Programação</h2>
+  <form id="quizForm">
+    <ol>
+      <li>
+        <label>1. O que representa um algoritmo?</label><br>
+        <input type="radio" name="q1" value="sequência de passos" required> Sequência de passos<br>
+        <input type="radio" name="q1" value="erro de sistema"> Erro de sistema<br>
+        <input type="radio" name="q1" value="aplicativo"> Aplicativo<br>
+        <input type="radio" name="q1" value="linguagem de máquina"> Linguagem de máquina<br>
+      </li><br>
+
+      <li>
+        <label>2. Qual estrutura é usada para repetir instruções?</label><br>
+        <input type="radio" name="q2" value="laço de repetição" required> Laço de repetição<br>
+        <input type="radio" name="q2" value="condicional"> Condicional<br>
+        <input type="radio" name="q2" value="variável"> Variável<br>
+        <input type="radio" name="q2" value="vetor"> Vetor<br>
+      </li><br>
+
+      <li>
+        <label>3. Qual destas é uma estrutura condicional?</label><br>
+        <input type="radio" name="q3" value="if" required> if<br>
+        <input type="radio" name="q3" value="while"> while<br>
+        <input type="radio" name="q3" value="for"> for<br>
+        <input type="radio" name="q3" value="print"> print<br>
+      </li><br>
+
+      <li>
+        <label>4. O que é uma variável?</label><br>
+        <input type="radio" name="q4" value="local para armazenar dados" required> Local para armazenar dados<br>
+        <input type="radio" name="q4" value="função de loop"> Função de loop<br>
+        <input type="radio" name="q4" value="nome de programa"> Nome de programa<br>
+        <input type="radio" name="q4" value="bloco de código"> Bloco de código<br>
+      </li><br>
+
+      <li>
+        <label>5. Qual valor a variável x terá após: x = 5 + 3 * 2?</label><br>
+        <input type="radio" name="q5" value="11" required> 11<br>
+        <input type="radio" name="q5" value="16"> 16<br>
+        <input type="radio" name="q5" value="13"> 13<br>
+        <input type="radio" name="q5" value="10"> 10<br>
+      </li><br>
+    </ol>
+    <button type="submit">Enviar Respostas</button><br><br>
+    <a href="/home">Conteúdos</a>
+  </form>
+
+  <h3>Resultado:</h3>
+  <pre id="jsonOutput"></pre>
+
+  <script>
+    const form = document.getElementById('quizForm');
+    const jsonOutput = document.getElementById('jsonOutput');
+
+    const respostasCorretas = {
+      q1: 'sequência de passos',
+      q2: 'laço de repetição',
+      q3: 'if',
+      q4: 'local para armazenar dados',
+      q5: '11'
+    };
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const formData = new FormData(form);
+      let acertos = 0;
+
+      for (let [key, value] of formData.entries()) {
+        if (value.trim().toLowerCase() === respostasCorretas[key].toLowerCase()) {
+          acertos++;
+        }
+      }
+
+      const resultado = {
+        quiz: "Logica",
+        acertos: acertos,
+        total: Object.keys(respostasCorretas).length,
+        data: new Date().toISOString()
+      };
+
+      jsonOutput.textContent = JSON.stringify(resultado, null, 2);
+
+      fetch('/saveReviews', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(resultado)
+      })
+      .then(res => res.json())
+      .then(data => console.log("Resposta:", data))
+      .catch(error => console.error("Erro:", error));
+
+      form.reset();
+    });
+  </script>
+</body>
+</html>
