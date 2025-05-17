@@ -8,60 +8,61 @@
 </head>
 <body>
   <header>
-    <div id="title">
-      <a href="/landingPage">
-        <img src="{{ url_for('static', filename='img/logo.png') }}" class="image-login" alt="logo" width="120" height="120">
-      </a>
+    <div class="navbar">
+        <a href="/landingPage">
+          <img src="{{ url_for('static', filename='img/logo.png') }}" class="image-login" alt="logo" width="120" height="120">
+        </a>
     </div>
   </header>
-
-    <div class= "main-login">
-      <div class= "leftLogin">
-        <h1>Faça seu Login <br> <span> E entre para nosso time!</span></h1>
-        <img src="{{ url_for('static', filename='img/icon-landingPage.png') }}" alt="personagem do site" width="310" height="310">
-      </div>
-      <div class= "right-login">
-        <div class="card-login">
-          <h1>LOGIN</h1>
-          <form action="/login" method="post">
-            <label for="username">Usuário:</label>
-            <input type="text" id="username" name="username" placeholder="Usuário" required>  
-
-            <br><br>
-
-            <label for="password">Senha:</label>
-            <input type="password" id="password" name="password" placeholder="Senha" required>
-
-            <br><br>
-
-            <button type="submit">Login</button>
-
-            <br><br>
-
-            <p>Ainda não tem uma conta? Cadastre-se!</p>
-          </form>
-          <a href="/register">
-            <button>
-              Criar Cadastro
-            </button>
-          </a>
-          {% if error %}
-            <div id="erro-backend" data-msg="{{ error }}"></div>
-          {% endif %}
-          <script>
-            window.onload = function() {
-                var erroDiv = document.getElementById("erro-backend");
-                if (erroDiv) {
-                    var mensagem = erroDiv.getAttribute("data-msg");
-                    if (mensagem) {
-                        alert(mensagem);
-                    }
-                }
-            }
-          </script>
+    <main>
+      <div class= "main-login">
+        <div class= "leftLogin">
+          <h1>Faça seu Login <br> <span> E entre para nosso time!</span></h1>
+          <img src="{{ url_for('static', filename='img/icon-landingPage.png') }}" alt="personagem do site" width="310" height="310">
         </div>
-      </div>
-  </div> 
+        <div class= "right-login">
+          <div class="card-login">
+            <h1>LOGIN</h1>
+            <form action="/login" method="post">
+              <label for="username">Usuário:</label>
+              <input type="text" id="username" name="username" placeholder="Usuário" required>  
+
+              <br><br>
+
+              <label for="password">Senha:</label>
+              <input type="password" id="password" name="password" placeholder="Senha" required>
+
+              <br><br>
+
+              <button type="submit">Login</button>
+
+              <br><br>
+
+              <p>Ainda não tem uma conta? Cadastre-se!</p>
+            </form>
+            <a href="/register">
+              <button>
+                Criar Cadastro
+              </button>
+            </a>
+            {% if error %}
+              <div id="erro-backend" data-msg="{{ error }}"></div>
+            {% endif %}
+            <script>
+              window.onload = function() {
+                  var erroDiv = document.getElementById("erro-backend");
+                  if (erroDiv) {
+                      var mensagem = erroDiv.getAttribute("data-msg");
+                      if (mensagem) {
+                          alert(mensagem);
+                      }
+                  }
+              }
+            </script>
+          </div>
+        </div>
+    </div> 
+    </main>
 </body>
 </html>
 

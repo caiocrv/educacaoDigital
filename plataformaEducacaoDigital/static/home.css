@@ -13,7 +13,7 @@ body{
 }
 
 header{
-    background-color: #b272f7;
+    background:linear-gradient(to right, #e1e5f0, #d0aef5);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -27,7 +27,12 @@ li{
     margin: 20px;
 }
 
-li:hover{
+a{
+  text-decoration: none;
+  color: #1e3a8a;
+}
+
+a:hover{
     color: whitesmoke;
     transition: 0.3s;
 }
@@ -82,7 +87,7 @@ span{
 }
 
 .card {
-  background-color: #a65ff1;
+  background-color: #b475f7;
   border-radius: 20px;
   padding: 1.5rem;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
@@ -110,6 +115,7 @@ button{
     color: #1e3a8a;
     font-weight: bold;
     background-color: #e4d2f7;
+    margin-top: 20px;
 }
 
 footer {

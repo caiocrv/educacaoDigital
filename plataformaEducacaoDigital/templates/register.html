@@ -8,56 +8,58 @@
 </head>
 <body>
     <header>
-        <div>
+         <div class="navbar">
             <a href="/landingPage">
                 <img src="{{ url_for('static', filename='img/logo.png') }}" class="image-login" alt="logo" width="120" height="120">
             </a>
         </div>
     </header>
-    <div class="main-Cadastro">
-        <div class="left-cad">
-            <h1>Faça seu cadastro! <br><span> Venha aprender com nosso time!</span></h1>
-            <img src="{{ url_for('static', filename='img/icon-landingPage.png') }}" alt="personagem do site" width="310" height="310">
-        </div>
-        <div class="right-cad">
-            <div class="card-cadastro">
-                <h2>Cadastrar conta</h2>
+    <main>
+        <div class="main-Cadastro">
+            <div class="left-cad">
+                <h1>Faça seu cadastro! <br><span> Venha aprender com nosso time!</span></h1>
+                <img src="{{ url_for('static', filename='img/icon-landingPage.png') }}" alt="personagem do site" width="310" height="310">
+            </div>
+            <div class="right-cad">
+                <div class="card-cadastro">
+                    <h2>Cadastrar conta</h2>
 
-                <form action="/register" method="post" onsubmit="return validarSenha(event)">
-                    <label for="username">Usuário</label>
-                    <input type="text" id="username" name="username" placeholder="Exemplo: dev.start" required>
+                    <form action="/register" method="post" onsubmit="return validarSenha(event)">
+                        <label for="username">Usuário</label>
+                        <input type="text" id="username" name="username" placeholder="Usuário" required>
+                        <p id="usuario">Exemplo: dev.start</p>
+                        <br>
 
-                    <br><br>
+                        <label for="password">Senha</label>
+                        <input type="password" id="password" name="password" placeholder="Senha" required>
+                        <p id="senha">Exemplo: dev.start</p>
+                        <br>
 
-                    <label for="password">Senha</label>
-                    <input type="password" id="password" name="password" placeholder="Exemplo: Senha@9235" required>
-                    
-                    <br><br>
+                        <label for="confirmPassword">Confirma Senha</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirma Senha" required>
 
-                    <label for="confirmPassword">Confirma Senha</label>
-                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirma Senha" required>
-
-                    <br><br>
-                    
-                    <button type="submit">Cadastrar</button>
-                    
-                    {% if error %}
-                    <div id="erro-backend" data-msg="{{ error }}"></div>
-                    {% endif %}
-                    <script>
-                    window.onload = function() {
-                        var erroDiv = document.getElementById("erro-backend");
-                        if (erroDiv) {
-                            var mensagem = erroDiv.getAttribute("data-msg");
-                            if (mensagem) {
-                                alert(mensagem);
+                        <br><br>
+                        
+                        <button type="submit">Cadastrar</button>
+                        
+                        {% if error %}
+                        <div id="erro-backend" data-msg="{{ error }}"></div>
+                        {% endif %}
+                        <script>
+                        window.onload = function() {
+                            var erroDiv = document.getElementById("erro-backend");
+                            if (erroDiv) {
+                                var mensagem = erroDiv.getAttribute("data-msg");
+                                if (mensagem) {
+                                    alert(mensagem);
+                                    }
                                 }
                             }
-                        }
-                    </script>
-                </form>
+                        </script>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
 </body>
 </html>
