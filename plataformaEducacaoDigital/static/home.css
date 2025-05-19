@@ -51,11 +51,11 @@ main {
 }
 
 .banner-texto h1 {
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .banner-texto p {
-  font-size: 15px;
+  font-size: 25px;
   font-weight: bold;
 }
 
@@ -72,7 +72,7 @@ span {
 }
 
 .descricao-cursos h2 {
-  font-size: 24px;
+  font-size: 30px;
   text-align: center;
   color: #1e3a8a;
   margin-bottom: 1rem;
@@ -92,6 +92,7 @@ span {
 }
 
 .cursos h2 {
+  font-size: 30px;
   text-align: center;
 }
 

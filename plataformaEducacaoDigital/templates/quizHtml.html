@@ -11,7 +11,45 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='quizHtml.css') }}">
 </head>
 <body>
-  <h2>Quiz de HTML</h2>
+  <section id="aulaHtml">
+    <h2>Aula Introdutória: Fundamentos de HTML</h2>
+
+    <p><strong>📌 1. O que é HTML?</strong></p>
+    <p>HTML é a sigla para <strong>HyperText Markup Language</strong>, ou seja, Linguagem de Marcação de Hipertexto. É a base da estrutura de páginas web. Com HTML, criamos títulos, parágrafos, links, imagens e muito mais. Ele organiza o conteúdo para que o navegador saiba como exibir as informações.</p>
+
+    <hr>
+
+    <p><strong>📌 2. Como criar parágrafos:</strong></p>
+    <p>Para escrever textos ou blocos de conteúdo, usamos a tag <code>&lt;p&gt;</code>, que representa um parágrafo. É uma das estruturas mais comuns em qualquer site.</p>
+    <pre><code>&lt;p&gt;Este é um parágrafo em HTML.&lt;/p&gt;</code></pre>
+
+    <p>Outras tags de conteúdo: <code>&lt;h1&gt; a &lt;h6&gt;</code> (títulos), <code>&lt;div&gt;</code> (blocos genéricos), <code>&lt;span&gt;</code> (texto em linha).</p>
+
+    <hr>
+
+    <p><strong>📌 3. Criando links com a tag <code>&lt;a&gt;</code>:</strong></p>
+    <p>Para criar um link clicável, usamos a tag <code>&lt;a&gt;</code> e o atributo <code>href</code>, que indica o destino do link.</p>
+    <pre><code>&lt;a href="https://www.exemplo.com"&gt;Visite o site&lt;/a&gt;</code></pre>
+
+    <p>Outros atributos importantes: <code>target="_blank"</code> para abrir em nova aba, <code>title</code> para dica ao passar o mouse.</p>
+
+    <hr>
+
+    <p><strong>📌 4. Inserindo imagens com a tag <code>&lt;img&gt;</code>:</strong></p>
+    <p>Para exibir imagens em uma página, usamos a tag <code>&lt;img&gt;</code>. Ela precisa do atributo <code>src</code> para indicar o caminho da imagem, e do atributo <code>alt</code> para acessibilidade.</p>
+    <pre><code>&lt;img src="caminho/da/imagem.jpg" alt="Descrição da imagem"&gt;</code></pre>
+
+    <p>A tag <code>&lt;img&gt;</code> não tem fechamento (é uma <em>tag vazia</em>).</p>
+
+    <hr>
+
+    <p><strong>📌 5. Comentários em HTML:</strong></p>
+    <p>Os comentários servem para adicionar anotações no código, que não são exibidas ao usuário no navegador. Eles são úteis para organização, explicações ou desativação temporária de partes do código.</p>
+    <pre><code>&lt;!-- Este é um comentário em HTML --&gt;</code></pre>
+
+    <p>Evite usar <code>//</code>, <code>/* */</code> ou <code>##</code>, pois esses formatos pertencem a outras linguagens como JavaScript, CSS e Python.</p>
+  </section>
+
   <form id="quizForm">
     <ol>
       <li>

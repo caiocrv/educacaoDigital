@@ -11,7 +11,51 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='quizCybersecurity.css') }}">
 </head>
 <body>
-  <h2>Quiz de Cibersegurança</h2>
+  <section id="aulaCiberseguranca">
+    <h2>Aula Introdutória: Conceitos Básicos de Cibersegurança</h2>
+
+    <p><strong>📌 1. O que é phishing?</strong></p>
+    <p>Phishing é um tipo de <strong>ataque de engenharia social</strong> onde criminosos tentam enganar usuários para obter informações confidenciais, como senhas ou dados bancários. Normalmente ocorre por e-mails ou mensagens falsas que imitam instituições confiáveis.</p>
+    <pre><code>Exemplo: Um e-mail que parece ser do banco, pedindo para "confirmar sua conta".</code></pre>
+
+    <hr>
+
+    <p><strong>📌 2. Senhas fortes:</strong></p>
+    <p>Uma senha forte é aquela difícil de ser adivinhada ou quebrada por programas automatizados. Ela deve conter:</p>
+    <ul>
+      <li>Letras maiúsculas e minúsculas</li>
+      <li>Números</li>
+      <li>Caracteres especiais (!, @, #, etc.)</li>
+      <li>No mínimo 8 caracteres</li>
+    </ul>
+    <p>Exemplo de senha fraca: <code>123456</code><br>
+      Exemplo de senha forte: <code>S3nh@F0rte!</code></p>
+
+    <hr>
+
+    <p><strong>📌 3. Autenticação de dois fatores (2FA):</strong></p>
+    <p>A autenticação de dois fatores adiciona uma camada extra de segurança. Em vez de apenas uma senha, o usuário precisa confirmar sua identidade com um <strong>segundo método</strong>, como um código enviado por SMS ou um aplicativo autenticador.</p>
+    <pre><code>Senha + Código no celular = Acesso autorizado</code></pre>
+    <p>Mesmo que alguém descubra sua senha, não conseguirá acessar sem o segundo fator.</p>
+
+    <hr>
+
+    <p><strong>📌 4. O que é um antivírus?</strong></p>
+    <p>É um software projetado para detectar, bloquear e remover <strong>vírus e malwares</strong> do seu dispositivo. Ele funciona como uma proteção ativa, analisando arquivos e comportamentos suspeitos.</p>
+    <p>Exemplos populares: Windows Defender, Avast, Norton.</p>
+
+    <hr>
+
+    <p><strong>📌 5. Ransomware – O "sequestro digital":</strong></p>
+    <p>Ransomware é um tipo de malware que <strong>bloqueia ou criptografa seus arquivos</strong> e exige um pagamento (resgate) para liberá-los. Muitas vezes o resgate é solicitado em criptomoedas, dificultando o rastreamento.</p>
+    <p>Para se proteger:</p>
+    <ul>
+      <li>Mantenha backups atualizados</li>
+      <li>Use antivírus e mantenha o sistema atualizado</li>
+      <li>Não clique em links ou anexos suspeitos</li>
+    </ul>
+  </section>
+
   <form id="quizForm">
     <ol>
       <li>

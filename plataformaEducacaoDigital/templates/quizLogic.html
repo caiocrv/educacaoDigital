@@ -11,7 +11,55 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='quizLogic.css') }}">
 </head>
 <body>
-  <h2>Quiz de Lógica de Programação</h2>
+  <section id="aulaLogica">
+    <h2>Aula Introdutória: Lógica de Programação</h2>
+
+    <p><strong>📌 1. O que é um algoritmo?</strong></p>
+    <p>Um algoritmo é uma <strong>sequência lógica e ordenada de passos</strong> que resolve um problema ou executa uma tarefa. Podemos compará-lo a uma receita de bolo: cada passo deve ser seguido corretamente para obter o resultado esperado.</p>
+    <pre><code>Exemplo: 
+  1. Pegue dois números.
+  2. Some os dois.
+  3. Mostre o resultado.</code></pre>
+
+    <hr>
+
+    <p><strong>📌 2. Laços de repetição (ou loops):</strong></p>
+    <p>São estruturas usadas para repetir blocos de código enquanto uma condição for verdadeira. Isso evita a repetição manual de comandos e torna o código mais eficiente.</p>
+    <pre><code># Exemplo em Python:
+  for i in range(3):
+      print("Olá!")  # Saída: Olá! (3 vezes)</code></pre>
+
+    <p>Outros exemplos de laço incluem: <code>while</code> e <code>do...while</code> (em algumas linguagens).</p>
+
+    <hr>
+
+    <p><strong>📌 3. Estruturas condicionais:</strong></p>
+    <p>Permitem executar diferentes blocos de código com base em condições. A estrutura mais comum é o <code>if</code>, que verifica se algo é verdadeiro.</p>
+    <pre><code>idade = 18
+  if idade >= 18:
+      print("Você é maior de idade.")</code></pre>
+
+    <p>O <code>if</code> pode ser combinado com <code>else</code> e <code>elif</code> (em Python) para testar múltiplas possibilidades.</p>
+
+    <hr>
+
+    <p><strong>📌 4. Variáveis:</strong></p>
+    <p>Uma variável é um <strong>espaço na memória</strong> usado para armazenar dados que podem mudar durante a execução do programa. Ela tem um nome e pode guardar diferentes tipos de valores: números, textos, listas, etc.</p>
+    <pre><code>nome = "Ana"
+  idade = 20</code></pre>
+    <p>Com elas, podemos manipular e reutilizar valores com facilidade.</p>
+
+    <hr>
+
+    <p><strong>📌 5. Ordem das operações:</strong></p>
+    <p>Assim como na matemática, em programação existe uma ordem para executar operações. Primeiro multiplicações e divisões, depois somas e subtrações.</p>
+    <p>Na expressão <code>x = 5 + 3 * 2</code>, primeiro é feito <code>3 * 2</code> e depois somado com <code>5</code>. Resultado: <code>11</code>.</p>
+    <pre><code>x = 5 + 3 * 2
+  print(x)  # Saída: 11</code></pre>
+
+    <p>Usar parênteses pode alterar a ordem, como em <code>(5 + 3) * 2 = 16</code>.</p>
+  </section>
+
   <form id="quizForm">
     <ol>
       <li>
