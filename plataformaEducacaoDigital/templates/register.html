@@ -13,12 +13,17 @@
                 <img src="{{ url_for('static', filename='img/logo.png') }}" class="image-login" alt="logo" width="120" height="120">
             </a>
         </div>
+        <ul>
+            <li><a href="/landingPage">DevStart</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Cadastrar-se</a></li>
+        </ul>
     </header>
     <main>
         <div class="main-Cadastro">
             <div class="left-cad">
                 <h1>Faça seu cadastro! <br><span> Venha aprender com nosso time!</span></h1>
-                <img src="{{ url_for('static', filename='img/icon-landingPage.png') }}" alt="personagem do site" width="310" height="310">
+                <img src="{{ url_for('static', filename='img/img-register.png') }}" alt="personagem do site" width="400" height="400">
             </div>
             <div class="right-cad">
                 <div class="card-cadastro">
@@ -27,12 +32,12 @@
                     <form action="/register" method="post" onsubmit="return validarSenha(event)">
                         <label for="username">Usuário</label>
                         <input type="text" id="username" name="username" placeholder="Usuário" required>
-                        <p id="usuario">Exemplo: dev.start</p>
+                        <p style="font-size: 11px;">Usuário só pode conter letras minúsculas, _ ou .</p>
                         <br>
 
                         <label for="password">Senha</label>
                         <input type="password" id="password" name="password" placeholder="Senha" required>
-                        <p id="senha">Exemplo: dev.start</p>
+                        <p style="font-size: 11px;">Utilize letras maiúsculas, número e caractere especial (@, $, #, ?, !, &)</p>
                         <br>
 
                         <label for="confirmPassword">Confirma Senha</label>

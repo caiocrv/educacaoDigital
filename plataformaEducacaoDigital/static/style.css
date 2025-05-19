@@ -45,7 +45,7 @@ main{
     padding: 2rem;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-top: 50px;
 }
 

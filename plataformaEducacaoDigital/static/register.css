@@ -21,16 +21,16 @@ header{
     padding: 0;
     width: 100%;
 }
+
 main{
     padding: 2rem;
 }
-
 
 .main-Cadastro{
     display: flex;
     justify-content: center;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .left-cad{
@@ -93,4 +93,19 @@ button{
 
 span{
     color:#6941ad ;
+}
+
+li{
+    display: inline-block;
+    margin: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: #1e3a8a;
+}
+
+a:hover{
+    color: whitesmoke;
+    transition: 0.3s;
 }
