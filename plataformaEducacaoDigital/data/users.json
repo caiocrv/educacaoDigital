@@ -15,81 +15,8 @@
         "password": "$argon2id$v=19$m=65536,t=3,p=4$dR06q0JbxU5C173UPKhstA$1JCZgq9ok34J/ciNnA4SwUBUHoU5rv3tcBPiC47uPT8"
     },
     {
-        "id": "2bc117bb-c3bf-4778-9c32-b09f88cc6aff",
-        "username": "teste",
-        "password": "$argon2id$v=19$m=65536,t=3,p=4$0GN5uic0wJJuLJbqTaZKSg$EFH1ZFjtF0uvW9WCPAskhvYIxLayLLNs9q2j7EutqIk"
-    },
-    {
-        "id": "f8cc6b77-0294-403c-96ab-1b4229d598b1",
-        "username": "CAIO",
-        "password": "$argon2id$v=19$m=65536,t=3,p=4$CW1Pii1leezlp2m66h4nfg$lk+qHIA/NkQqriHhoMLY6GrEN6WDVcKnEy4IoPQquR0"
-    },
-    {
-        "id": "4ddb6743-e6a3-4bce-8093-711b4277d0c7",
-        "username": "caiocrv",
-        "password": "$argon2id$v=19$m=65536,t=3,p=4$hnab+eONCiH5+mo2vcjA5w$9lEM/YLl+194wQtKZTJo64ZhNwlBZmXWHgZ+JWUb70Q"
-    },
-    {
-        "id": "a7e67109-1fd0-49e9-94ed-01b15cee80f7",
-        "username": "julia",
-        "password": "$argon2id$v=19$m=65536,t=3,p=4$rq7r8NyxXqXfeMadW5Otbw$o4S6tgY7l47/xHzyie+ho+A+nIY/TG1N+aK9b7hZlvQ"
-    },
-    {
-        "id": "7f4a00da-8e50-44a5-98ec-5a49a6a6c95c",
-        "username": "caiox",
-        "password": "$argon2id$v=19$m=65536,t=3,p=4$UnZEPzA6PkHk1o7NJl9dgw$GO8RUwuVIbMJ6pbLlg0KVIBj5Tk36u4vw2LjtrUdBEo"
-    },
-    {
-        "id": "522952f5-6b2a-4dc2-b9c9-84cec055bf1e",
-        "username": "oiac",
-        "password": "$argon2id$v=19$m=65536,t=3,p=4$OqxfsXWF+pCaGV+seg9hfQ$aMahyPOceUb5lpqOJiT694hHyl3b0/DWswB/tiM/jRs"
-    },
-    {
-        "id": "4befb96d-1456-43fc-9fa6-bd46c4ec9e62",
-        "username": "I9tyexe",
-        "password": "$argon2id$v=19$m=65536,t=3,p=4$YZSW9mAoBmwIwTbRu6R7DQ$9NuinYCc5NdjP1Xric95azwcatUp+CBgPhnS1vYaDVI"
-    },
-    {
-        "id": "2813d64a-2e32-4caa-9d24-83000e63b6ed",
-        "username": "caioocrv",
-        "password": "$argon2id$v=19$m=65536,t=3,p=4$4zDYuRFD1F4J3ZhIrII/AA$i+EFkhyValc0fOWOhhrhoswQCcyV7KvHrn/uzGf46Ak"
-    },
-    {
-        "id": "f4582669-b8f0-4856-8eb9-8c0bed6d8c62",
-        "username": "caioxrl",
-        "password": "$argon2id$v=19$m=65536,t=3,p=4$9uS2EYoe4B33ExeUUpvLmQ$pw/FW95K4HBLxEZosd14A6Gx4i+BthCIuAEy8YGFr5o"
-    },
-    {
-        "id": "25d5fbab-f58d-4156-b2be-1314238b9dcd",
-        "username": "testex",
-        "password": "$argon2id$v=19$m=65536,t=3,p=4$1ggSfs2gvme1E7qvflJXQA$6aMxWAE4DWC949gXa1GUJZhRroY4PGoFnH9i3ycAtZo"
-    },
-    {
-        "id": "aac70157-f84a-418c-a7b9-451660ae5f86",
-        "username": "cadastro",
-        "password": "$argon2id$v=19$m=65536,t=3,p=4$7gcSqoRB3b+2XdZ0456Y2g$R8XtCGK40TsuGaXNPF82ucJ7ydSrla7SoUvuBtfFXhY"
-    },
-    {
-        "id": "b6dd7d61-9867-4f49-9513-98b6473629d7",
-        "username": "userTeste",
-        "password": "$argon2id$v=19$m=65536,t=3,p=4$6PH5uHLAnfnBark9KNrI3g$vviA//QFP0EYl8fQjRyWkV1lz4h+QzQajrADfiihBp0",
-        "hitQuizPython": 5,
-        "hitQuizCybersecurity": 3
-    },
-    {
-        "id": "43531f50-aefc-46ba-a916-11dac010def2",
-        "username": "reiner",
-        "password": "$argon2id$v=19$m=65536,t=3,p=4$3OB4p54JOz0mKq7o4mU3ug$W/8H/DYx0nOwr0jJKAzPwtg4ntwpbaD0hO6M0I0DsIQ",
-        "hitQuizPython": 3
-    },
-    {
         "id": "9c804a57-e2d8-4531-844e-017c1a173bb1",
         "username": "khim",
         "password": "$argon2id$v=19$m=65536,t=3,p=4$5WEUi8jC+jTALKNtiYAZEA$lvquE+2JAfcCu90H6FP0KcUcP4DwUv4QnpEgcjLfAqs"
-    },
-    {
-        "id": "09a058af-2c20-44c3-a155-1cb251e99fca",
-        "username": "jjulia",
-        "password": "$argon2id$v=19$m=65536,t=3,p=4$AhTSgk6ZIoPn+i7aJrbwUQ$h3a0OFuSrFbslOopQaGuv5JVRKppCdqeeeN8VAbno38"
     }
 ]

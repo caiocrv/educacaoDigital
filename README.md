@@ -1,89 +1,143 @@
-# 💻 Plataforma de Educação Digital
+# 📚 DevStart - Plataforma de Inclusão Digital
 
-Sistema simples de autenticação com **Flask**, utilizando **JWT**, **Argon2** para criptografia de senhas e arquivos HTML com renderização dinâmica.
+A **DevStart** é uma plataforma web educacional gratuita, desenvolvida com o objetivo de promover a **inclusão digital** por meio de conteúdos introdutórios e práticos em **programação**, **HTML**, **cibersegurança** e **lógica de programação**.
 
----
+## 🎯 Objetivo
 
-## 📦 Requisitos
-
-- Python 3.7+
-- pip
-
----
-
-## 🚀 Instalação
-
-### 1. Clone o repositório
-
-```bash
-git clone https://github.com/seu-usuario/seu-repo.git
-cd seu-repo
-```
-
-### 2. Crie e ative um ambiente virtual (opcional, mas recomendado)
-
-```bash
-python -m venv venv
-source venv/bin/activate   # Windows: venv\Scripts\activate
-```
-
-### 3. Instale as dependências
-
-```bash
-pip install -r requirements.txt
-```
-
-Ou, se preferir:
-
-```bash
-pip install Flask argon2-cffi PyJWT pytz
-```
+Oferecer um ambiente acessível e seguro onde usuários iniciantes possam:
+- Criar uma conta de forma simples e segura
+- Realizar quizzes temáticos
+- Acompanhar sua evolução com gráficos de desempenho
+- Ter seus dados protegidos conforme os princípios da **LGPD** e **boas práticas de cibersegurança**
 
 ---
 
-## 🧪 Como usar
+## ⚙️ Tecnologias Utilizadas
 
-### 1. Execute o servidor
+- **Back-end:** Flask (Python)
+- **Front-end:** HTML5, CSS3, JavaScript
+- **Banco de Dados:** Arquivos JSON
+- **Segurança:**
+  - Senhas criptografadas com Argon2
+  - Autenticação via JWT armazenado em cookies
+  - Validações de senha e usuário
+- **Gráficos:** Chart.js
+
+---
+
+## 🧩 Funcionalidades
+
+- ✅ Registro e login com autenticação segura
+- ✅ Página inicial de boas-vindas (Landing Page)
+- ✅ Interface de usuário responsiva
+- ✅ Validação de senhas seguras (mínimo 6 caracteres, maiúsculas, especiais)
+- ✅ Quizzes interativos:
+  - Python
+  - Lógica de Programação
+  - HTML
+  - Cibersegurança
+- ✅ Armazenamento das respostas dos quizzes
+- ✅ Dashboard com gráficos:
+  - Média geral de acertos
+  - Acertos por quiz
+- ✅ Logout e expiração de sessão
+
+---
+
+## 🧪 Estrutura do Projeto
+
+```
+
+plataformaEducacaoDigital/
+│
+├── static/                      # Arquivos de imagem, CSS e JS
+│
+├── templates/                   # Arquivos HTML (views)
+│   ├── landingPage.html
+│   ├── login.html
+│   ├── register.html
+│   ├── home.html
+│   ├── quizPython.html
+│   ├── quizCybersecurity.html
+│   └── ...
+│
+├── data/                        # "Banco de dados" em JSON
+│   ├── users.json
+│   └── avaliacoes.json
+│
+├── main.py                      # Arquivo principal da aplicação Flask
+└── README.md                    # (Este arquivo)
+
+````
+
+---
+
+## 🚀 Como Executar Localmente
+
+### Pré-requisitos
+
+- Python 3.10+
+- Pip
+
+### Instalação
+
+1. Clone o repositório:
+```bash
+git clone https://github.com/seu-usuario/plataformaEducacaoDigital.git
+cd plataformaEducacaoDigital
+````
+
+2. Instale as dependências:
+
+```bash
+pip install flask argon2-cffi pyjwt pytz
+```
+
+3. Execute o servidor Flask:
 
 ```bash
 python main.py
 ```
 
-Acesse em: [http://localhost:5000](http://localhost:5000)
-
----
-
-## 👥 Funcionalidades
-
-- Cadastro com validação de senha (mínimo de 6 caracteres, 1 maiúscula e 1 caractere especial).
-- Login com verificação de credenciais criptografadas.
-- Geração de JWT para sessões seguras.
-- Armazenamento de usuários em JSON.
-- Validações front-end com JavaScript.
-
----
-
-## 📁 Estrutura do Projeto
+4. Acesse via navegador:
 
 ```
-├── main.py                     # Backend Flask
-├── plataformaEducacaoDigital
-│   └── data
-│       └── users.json          # Dados dos usuários
-├── static
-│   └── scripts.js              # Validação de senha no frontend
-├── templates
-│   ├── login.html              # Página de login
-│   ├── register.html           # Página de cadastro
-│   └── home.html               # Página protegida
-├── requirements.txt            # Dependências do projeto
+http://localhost:5000
 ```
 
 ---
 
-## 📌 Observações
+## 🛡️ Segurança e LGPD
 
-- A chave secreta usada no JWT (`SECRET_KEY`) está hardcoded para fins de teste. Em produção, utilize variáveis de ambiente!
-- O arquivo `users.json` é utilizado como banco de dados local apenas para fins didáticos.
+* Todas as senhas são **criptografadas** com **Argon2**.
+* Autenticação baseada em **JWT** com expiração de 12h.
+* Nenhum dado sensível é armazenado em texto puro.
+* Armazenamento em arquivos locais JSON — ideal para prototipagem segura sem banco de dados.
 
+---
 
+## 📈 Exemplo de Gráficos
+
+Os dados de desempenho são visualizados via **Chart.js**:
+
+* **Gráfico 1**: Acertos por quiz
+* **Gráfico 2**: Média de acertos (última tentativa de cada quiz)
+
+---
+
+## 👨‍💻 Autor
+
+Desenvolvido por Caio (https://github.com/caiocrv) e Khimberlly (https://github.com/khiml) como projeto integrador do curso de **Análise e Desenvolvimento de Sistemas**.
+
+---
+
+## 📄 Licença
+
+Este projeto é livre para fins educacionais. Sinta-se à vontade para usar, modificar e contribuir.
+
+---
+
+## 💡 Contato
+
+Caio Gomes Carvalho
+* 💼 LinkedIn: [https://linkedin.com/in/caiocrv](https://linkedin.com/in/caiocrv)

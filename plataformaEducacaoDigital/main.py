@@ -5,11 +5,12 @@ import datetime
 import pytz
 import uuid
 import json
+import secrets
 
 
 ph = PasswordHasher()
 app = Flask(__name__)
-SECRET_KEY = "123"
+SECRET_KEY = secrets.token_urlsafe(50)
 
 @app.route("/", methods=['GET'])
 def index():
@@ -18,55 +19,39 @@ def index():
 @app.route("/landingPage", methods=['GET'])
 def landingPage():
     if request.method == 'GET':
-        # Quando o usuário apenas acessa a página /landingPage via navegador
         return render_template('landingPage.html')
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
-
-    # Se tiver metodo "POST" no HTML, executa
     if request.method == 'POST':
-        # Armazenando a usuário e senha do FORM
         password = request.form.get('password')
         confirmPassword = request.form.get('confirmPassword')
         username = request.form.get('username')
 
-        # Validando senha
         characterSpecial = 0
         characterUpper = 0
 
-        # Validando username
         for character in username:
-            # Verificando se o username tem espaço
             if character.isspace():
-                print("Usuário não pode conter espaço")
                 return render_template('register.html', error="Usuário não pode conter espaço.")
             
-            # Verificando caracteres no username 
             ascii_code = ord(character)
             if not (97 <= ascii_code <= 122 or ascii_code in (95, 46)):
-                print("O usuário pode conter apenas letras minúsculas e '_' ou '.'")
                 return render_template('register.html', error="Usuário só pode conter letras minúsculas, _ ou .")
 
-        # Validando password
         if confirmPassword != password:
             return render_template('register.html', error="As senhas não coincidem.")
         
         for character in password:
-            # Verificando se a senha tem backspace
             if character.isspace():
-                print("Senha não pode conter espaço")
                 return render_template('register.html', error="Senha não pode conter espaço.")
             
-            # Verificando a quantidade de caracteres especiais na senha
             if character in "@#?!&$":
                 characterSpecial += 1
             
-            # Verificando a quantidade de caracteres maíusculo
             if character.isupper():
                 characterUpper += 1
 
-        # Verificando dificuldade da senha
         if len(password) >= 6 and characterSpecial >= 1 and characterUpper >= 1:
             try:
                 with open("plataformaEducacaoDigital/data/users.json", "r", encoding="utf-8") as arquivo:
@@ -75,23 +60,20 @@ def register():
                 users_data = []
 
             if any(user['username'] == username for user in users_data):
-                print("Usuário já está sendo utilizado")
                 return render_template('register.html', error="Usuário já está sendo utilizado")
             
 
-            user_id = str(uuid.uuid4())  # Gerando um UUID único
+            user_id = str(uuid.uuid4())
             hashadPassword = ph.hash(password)
 
-            # Armazenando em um dicionário
             user_data = {
                 "id":user_id,
                 "username":username,
                 "password":hashadPassword
             }
 
-            users_data.append(user_data) # Adiciona o novo usuário
+            users_data.append(user_data)
 
-            # Inserindo usuário e senha no arquivo JSON
             with open("plataformaEducacaoDigital/data/users.json", "w", encoding="utf-8") as arquivo:
                 json.dump(users_data, arquivo, indent=4, ensure_ascii=False)
                 
@@ -99,7 +81,6 @@ def register():
 
             return render_template('login.html', error="Usuário cadastrado com sucesso!")
         else:
-            print("Senha não contém nível de dificuldade suficiente")
             return render_template('register.html', error="Senha não possiu dificuldade mínima permitida. Utilize letras maiúsculas, número e caractere especial (@, $, #, ?, !, &)")
                    
     return render_template('register.html')
@@ -107,21 +88,17 @@ def register():
 @app.route("/login", methods=['GET', 'POST'])
 def login():
     if request.method == 'GET':
-        # Quando o usuário apenas acessa a página /login via navegador
         return render_template('login.html')
         
-    # Armazenando o usuário e senha na variavel
     username = request.form.get('username')
     password = request.form.get('password')
 
-    # Lendo arquivo JSON
     try:
         with open("plataformaEducacaoDigital/data/users.json", "r", encoding="utf-8") as arquivo:
             userRegistration = json.load(arquivo)
     except FileNotFoundError:
         return render_template('login.html', error="Usuário não encontrado.")
 
-    # Validando credencial
     try:
         user = next((u for u in userRegistration if u['username'] == username), None)
         
@@ -133,28 +110,21 @@ def login():
     except:
         return render_template('login.html', error="Usuário ou senha incorreto")
 
-    # Gerando Token de acesso, usado para verificar a sessão do usuário
     payload = {
         "user_id":user['id'],
         "user_name":user['username'],
         "exp": datetime.datetime.now(pytz.utc) + datetime.timedelta(hours=12) # Token expira em 12 hora
     }
 
-    print("Gerando token")
     token = jwt.encode(payload, SECRET_KEY, algorithm="HS256")
-    print(token)
 
-    # Armazenando o token em um cookie
     response = make_response(redirect(url_for('home')))
     response.set_cookie("auth_token", token)
 
     return response
 
 @app.route("/home", methods=['GET', 'POST'])
-def home():
-    print("BEM VINDO, VOCÊ ESTÁ NA PÁGINA HOME")
-    
-    # Verificar se o token existe nos cookies
+def home():    
     token = request.cookies.get('auth_token')
     
     if token:
@@ -185,7 +155,6 @@ def quizPython():
         return redirect(url_for('index', error="Token expirado"))
     
     if request.method == 'GET':
-        # Quando o usuário apenas acessa a página /quizPython via navegador
         return render_template('quizPython.html')
     
     dados = request.get_json()
@@ -220,7 +189,6 @@ def quizCybersecurity():
         return redirect(url_for('index', error="Token expirado"))
 
     if request.method == 'GET':
-        # Quando o usuário apenas acessa a página /quizCybersecurity via navegador
         return render_template('quizCybersecurity.html')
     
     dados = request.get_json()
@@ -394,7 +362,6 @@ def graphicData():
                 return {"media": 0, "porQuiz": {}}
 
             por_quiz = {}
-            # Percorre de trás pra frente para pegar a última tentativa de cada quiz
             for a in reversed(avals):
                 quiz = a["quiz"]
                 if quiz not in por_quiz:
@@ -403,7 +370,6 @@ def graphicData():
                         "total": a["total"]
                     }
 
-            # Calcula a média percentual com base apenas na última tentativa de cada quiz
             porcentagens = []
             for q in por_quiz.values():
                 if q["total"] > 0:
@@ -414,13 +380,14 @@ def graphicData():
 
     return {"media": 0, "porQuiz": {}}
 
-
 @app.route("/logout", methods=['GET', 'POST'])
 def logout():
     response = make_response(redirect(url_for("landingPage")))
     response.set_cookie("auth_token", "", expires=0)
 
     return response
+
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=500, debug=True)
