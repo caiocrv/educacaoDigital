@@ -4,7 +4,7 @@ body {
     background:linear-gradient(to right, #e1e5f0, #d0aef5);
     color: #1e3a8a;
     max-width: 1200px;
-    margin: 0;
+    margin: 10px;
     padding: 0;
     font-family: "Poppins", sans-serif;
 }
@@ -18,12 +18,21 @@ body {
 
 a{
     color: #1e3a8a;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 a:hover{
-    color:#6d05dd;
+    color:#e5d9f3;
     transition: 0.3s;
 }
+
+#conteudos-btn{
+    border: 2px solid #1e3a8a;
+    padding: 5px;
+    border-radius: 8px;
+}
+
 
 button{
     padding: 5px;
@@ -36,4 +45,11 @@ button{
     color: #1e3a8a;
     font-weight: bold;
     background-color: #c7a1f0;
+}
+
+#aulaLogica{
+    background-color: #bf8df5;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
