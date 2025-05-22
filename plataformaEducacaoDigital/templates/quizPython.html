@@ -1,175 +1,236 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <div class="navbar">
+  <head>
+    <div class="navbar">
       <a href="/home">
-          <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo" width="120" height="120">
+        <img
+          src="{{ url_for('static', filename='img/logo.png') }}"
+          alt="logo"
+          width="120"
+          height="120"
+        />
       </a>
-  </div>
-  <meta charset="UTF-8">
-  <title>Quiz de Python</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='quizPython.css') }}">
-</head>
-<body>
-  <section id="aulaPython">
-    <h2>Aula Introdutória: Fundamentos Essenciais de Python</h2>
+    </div>
+    <meta charset="UTF-8" />
+    <title>Quiz de Python</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='quizPython.css') }}"
+    />
+  </head>
+  <body>
+    <section id="aulaPython">
+      <h2>Aula Introdutória: Fundamentos Essenciais de Python</h2>
 
-    <p><strong> 1. A função <code>input()</code>:</strong></p>
-    <p>Em Python, a função <code>input()</code> serve para capturar informações digitadas pelo usuário. Independentemente do que o usuário digitar — um número, uma palavra ou uma frase — o valor retornado será sempre do tipo <code>str</code> (string).</p>
-    <pre><code>nome = input("Qual é o seu nome? ")
+      <p>
+        <strong> 1. A função <code>input()</code>:</strong>
+      </p>
+      <p>
+        Em Python, a função <code>input()</code> serve para capturar informações
+        digitadas pelo usuário. Independentemente do que o usuário digitar — um
+        número, uma palavra ou uma frase — o valor retornado será sempre do tipo
+        <code>str</code> (string).
+      </p>
+      <pre><code>nome = input("Qual é o seu nome? ")
   print("Olá, " + nome)</code></pre>
-    <p>Se você quiser trabalhar com números inteiros, precisará converter esse valor usando <code>int()</code>:</p>
-    <pre><code>idade = int(input("Digite sua idade: "))
+      <p>
+        Se você quiser trabalhar com números inteiros, precisará converter esse
+        valor usando <code>int()</code>:
+      </p>
+      <pre><code>idade = int(input("Digite sua idade: "))
   print(idade + 1)</code></pre>
 
-    
-
-    <p><strong>2. Definindo funções com <code>def</code>:</strong></p>
-    <p>Funções são blocos reutilizáveis de código. Em Python, usamos a palavra-chave <code>def</code> para criar uma função. Ela deve ser seguida do nome da função e parênteses (podem ou não conter parâmetros).</p>
-    <pre><code>def saudacao():
+      <p>
+        <strong>2. Definindo funções com <code>def</code>:</strong>
+      </p>
+      <p>
+        Funções são blocos reutilizáveis de código. Em Python, usamos a
+        palavra-chave <code>def</code> para criar uma função. Ela deve ser
+        seguida do nome da função e parênteses (podem ou não conter parâmetros).
+      </p>
+      <pre><code>def saudacao():
       print("Bem-vindo(a) ao curso de Python!")
 
   saudacao()  # Chamada da função</code></pre>
 
-
-    <p><strong>3. Multiplicação de strings:</strong></p>
-    <p>Em Python, é possível multiplicar uma string por um número inteiro. Isso significa repetir o conteúdo da string diversas vezes. Veja:</p>
-    <pre><code>mensagem = "a" * 3
+      <p><strong>3. Multiplicação de strings:</strong></p>
+      <p>
+        Em Python, é possível multiplicar uma string por um número inteiro. Isso
+        significa repetir o conteúdo da string diversas vezes. Veja:
+      </p>
+      <pre><code>mensagem = "a" * 3
   print(mensagem)  # Saída: aaa</code></pre>
-    <p>Esse recurso é útil para criar padrões, separadores ou repetir mensagens.</p>
+      <p>
+        Esse recurso é útil para criar padrões, separadores ou repetir
+        mensagens.
+      </p>
 
-
-    <p><strong>4. Dicionários em Python:</strong></p>
-    <p>Um dicionário é uma estrutura de dados que armazena pares de <strong>chave e valor</strong>. Ele é declarado com chaves <code>{}</code> e permite acessar os valores por suas respectivas chaves.</p>
-    <pre><code>aluno = {
+      <p><strong>4. Dicionários em Python:</strong></p>
+      <p>
+        Um dicionário é uma estrutura de dados que armazena pares de
+        <strong>chave e valor</strong>. Ele é declarado com chaves
+        <code>{}</code> e permite acessar os valores por suas respectivas
+        chaves.
+      </p>
+      <pre><code>aluno = {
       "nome": "Lucas",
       "idade": 21,
       "curso": "Python"
   }
 
   print(aluno["nome"])  # Saída: Lucas</code></pre>
-    <p>Diferente de listas, onde os itens são acessados por índice, no dicionário usamos chaves personalizadas.</p>
+      <p>
+        Diferente de listas, onde os itens são acessados por índice, no
+        dicionário usamos chaves personalizadas.
+      </p>
 
-
-    <p><strong>5. Operadores lógicos - <code>and</code>, <code>or</code>, <code>not</code>:</strong></p>
-    <p>Python possui operadores lógicos para combinar condições:</p>
-    <ul>
-      <li><code>and</code> – Retorna verdadeiro se <strong>ambas</strong> as condições forem verdadeiras.</li>
-      <li><code>or</code> – Retorna verdadeiro se <strong>pelo menos uma</strong> das condições for verdadeira.</li>
-      <li><code>not</code> – Inverte o valor lógico (True vira False e vice-versa).</li>
-    </ul>
-    <pre><code>idade = 22
+      <p>
+        <strong
+          >5. Operadores lógicos - <code>and</code>, <code>or</code>,
+          <code>not</code>:</strong
+        >
+      </p>
+      <p>Python possui operadores lógicos para combinar condições:</p>
+      <ul>
+        <li>
+          <code>and</code> – Retorna verdadeiro se <strong>ambas</strong> as
+          condições forem verdadeiras.
+        </li>
+        <li>
+          <code>or</code> – Retorna verdadeiro se
+          <strong>pelo menos uma</strong> das condições for verdadeira.
+        </li>
+        <li>
+          <code>not</code> – Inverte o valor lógico (True vira False e
+          vice-versa).
+        </li>
+      </ul>
+      <pre><code>idade = 22
   tem_carteira = True
 
   if idade >= 18 and tem_carteira:
       print("Pode dirigir!")</code></pre>
 
-    <p>Nesse exemplo, a pessoa só poderá dirigir se for maior de idade <strong>e</strong> tiver carteira de motorista.</p> <br>
-    <a href="/home" id="conteudos-btn">Conteúdos</a>
-  </section> <br>
+      <p>
+        Nesse exemplo, a pessoa só poderá dirigir se for maior de idade
+        <strong>e</strong> tiver carteira de motorista.
+      </p>
+      <br />
+      <a href="/home" id="conteudos-btn">Conteúdos</a>
+    </section>
+    <br />
 
-  <h4>Respondas as questões acerca do conteúdo acima:</h4>
+    <h4>Respondas as questões acerca do conteúdo acima:</h4>
 
-  <form id="quizForm">
-    <ol>
-      <li>
-        <label> Qual é o tipo de dado retornado pela função <code>input()</code>?</label><br>
-        <input type="radio" name="q1" value="str" required> str<br>
-        <input type="radio" name="q1" value="int"> int<br>
-        <input type="radio" name="q1" value="bool"> bool<br>
-        <input type="radio" name="q1" value="float"> float<br>
-      </li><br>
+    <form id="quizForm">
+      <ol>
+        <li>
+          <label>
+            Qual é o tipo de dado retornado pela função
+            <code>input()</code>?</label
+          ><br />
+          <input type="radio" name="q1" value="str" required /> str<br />
+          <input type="radio" name="q1" value="int" /> int<br />
+          <input type="radio" name="q1" value="bool" /> bool<br />
+          <input type="radio" name="q1" value="float" /> float<br />
+        </li>
+        <br />
 
-      <li>
-        <label> Qual palavra-chave é usada para definir uma função em Python?</label><br>
-        <input type="radio" name="q2" value="def" required> def<br>
-        <input type="radio" name="q2" value="func"> func<br>
-        <input type="radio" name="q2" value="lambda"> lambda<br>
-        <input type="radio" name="q2" value="define"> define<br>
-      </li><br>
+        <li>
+          <label>
+            Qual palavra-chave é usada para definir uma função em Python?</label
+          ><br />
+          <input type="radio" name="q2" value="def" required /> def<br />
+          <input type="radio" name="q2" value="func" /> func<br />
+          <input type="radio" name="q2" value="lambda" /> lambda<br />
+          <input type="radio" name="q2" value="define" /> define<br />
+        </li>
+        <br />
 
-      <li>
-        <label> Qual é o resultado de <code>3 * 'a'</code>?</label><br>
-        <input type="radio" name="q3" value="aaa" required> aaa<br>
-        <input type="radio" name="q3" value="a3"> a3<br>
-        <input type="radio" name="q3" value="3a"> 3a<br>
-        <input type="radio" name="q3" value="erro"> erro<br>
-      </li><br>
+        <li>
+          <label> Qual é o resultado de <code>3 * 'a'</code>?</label><br />
+          <input type="radio" name="q3" value="aaa" required /> aaa<br />
+          <input type="radio" name="q3" value="a3" /> a3<br />
+          <input type="radio" name="q3" value="3a" /> 3a<br />
+          <input type="radio" name="q3" value="erro" /> erro<br />
+        </li>
+        <br />
 
-      <li>
-        <label> Como você cria um dicionário em Python?</label><br>
-        <input type="radio" name="q4" value="{}" required> {}<br>
-        <input type="radio" name="q4" value="[]"> []<br>
-        <input type="radio" name="q4" value="()"> ()<br>
-        <input type="radio" name="q4" value="<>"> <><br>
-      </li><br>
+        <li>
+          <label> Como você cria um dicionário em Python?</label><br />
+          <input type="radio" name="q4" value="{}" required /> {}<br />
+          <input type="radio" name="q4" value="[]" /> []<br />
+          <input type="radio" name="q4" value="()" /> ()<br />
+          <input type="radio" name="q4" value="<>" /> <><br />
+        </li>
+        <br />
 
-      <li>
-        <label> Qual é o operador lógico para "e" em Python?</label><br>
-        <input type="radio" name="q5" value="and" required> and<br>
-        <input type="radio" name="q5" value="or"> or<br>
-        <input type="radio" name="q5" value="&&"> &&<br>
-        <input type="radio" name="q5" value="e"> e<br>
-      </li><br>
-    </ol>
-    <button type="submit">Enviar Respostas</button>
-    <br><br>
-    
-  </form>
+        <li>
+          <label> Qual é o operador lógico para "e" em Python?</label><br />
+          <input type="radio" name="q5" value="and" required /> and<br />
+          <input type="radio" name="q5" value="or" /> or<br />
+          <input type="radio" name="q5" value="&&" /> &&<br />
+          <input type="radio" name="q5" value="e" /> e<br />
+        </li>
+        <br />
+      </ol>
+      <button type="submit">Enviar Respostas</button>
+      <br /><br />
+    </form>
 
-  <h3>Resultado:</h3>
-  <pre id="jsonOutput"></pre>
+    <h3>Resultado:</h3>
+    <pre id="jsonOutput"></pre>
 
-  <script>
-    const form = document.getElementById('quizForm');
-    const jsonOutput = document.getElementById('jsonOutput');
+    <script>
+      const form = document.getElementById("quizForm");
+      const jsonOutput = document.getElementById("jsonOutput");
 
-    const respostasCorretas = {
-      q1: 'str',
-      q2: 'def',
-      q3: 'aaa',
-      q4: '{}',
-      q5: 'and'
-    };
-
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      const formData = new FormData(form);
-      let acertos = 0;
-
-      for (let [key, value] of formData.entries()) {
-        if (value.trim().toLowerCase() === respostasCorretas[key]) {
-          acertos++;
-        }
-      }
-
-      const resultado = {
-        quiz: "Python",
-        acertos: acertos,
-        total: Object.keys(respostasCorretas).length,
-        data: new Date().toISOString()
+      const respostasCorretas = {
+        q1: "str",
+        q2: "def",
+        q3: "aaa",
+        q4: "{}",
+        q5: "and",
       };
 
-      jsonOutput.textContent = JSON.stringify(resultado, null, 2);
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
 
-      fetch('/saveReviews', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(resultado)
-      })
-      .then(res => res.json())
-      .then(data => {
-        console.log("Resposta do servidor:", data);
-      })
-      .catch(error => {
-        console.error("Erro ao enviar acertos:", error);
+        const formData = new FormData(form);
+        let acertos = 0;
+
+        for (let [key, value] of formData.entries()) {
+          if (value.trim().toLowerCase() === respostasCorretas[key]) {
+            acertos++;
+          }
+        }
+
+        const resultado = {
+          quiz: "Python",
+          acertos: acertos,
+          total: Object.keys(respostasCorretas).length,
+          data: new Date().toISOString(),
+        };
+
+        jsonOutput.textContent = JSON.stringify(resultado, null, 2);
+
+        fetch("/saveReviews", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(resultado),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log("Resposta do servidor:", data);
+          })
+          .catch((error) => {
+            console.error("Erro ao enviar acertos:", error);
+          });
+
+        form.reset();
       });
-
-      form.reset();
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>

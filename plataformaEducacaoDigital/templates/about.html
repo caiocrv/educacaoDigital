@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sobre - DevStart</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='home.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <a href="/home">
+          <img
+            src="{{ url_for('static', filename='img/logo.png') }}"
+            alt="Logo DevStart"
+            width="120"
+            height="120"
+          />
+        </a>
+      </div>
+      <ul>
+        <li><a href="/about">Sobre</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/register">Cadastrar-se</a></li>
+      </ul>
+    </header>
+
+    <main>
+      <section class="banner">
+        <div class="banner-texto">
+          <h1>Conheça o Projeto DevStart</h1>
+          <p><span>Inclusão digital com tecnologia e cidadania</span></p>
+        </div>
+      </section>
+
+      <section class="descricao-cursos">
+        <h2>O que é o DevStart?</h2>
+        <p>
+          DevStart é uma plataforma educacional gratuita desenvolvida com o
+          objetivo de democratizar o acesso ao ensino de programação e
+          tecnologia. Focada em estudantes da rede pública e jovens de
+          comunidades carentes, a plataforma oferece cursos de lógica de
+          programação, Python, HTML básico e cibersegurança.
+        </p>
+
+        <p>
+          Utilizando tecnologias de código aberto como Python, JSON, HTML, CSS e
+          JavaScript, o sistema foi projetado para ser leve, seguro e funcional
+          em computadores com recursos limitados, priorizando o uso de software
+          livre como distribuições Linux. A plataforma também adota princípios
+          de <strong>sustentabilidade digital</strong> e reaproveitamento de
+          equipamentos.
+        </p>
+      </section>
+
+      <section class="descricao-cursos">
+        <h2>Segurança e Privacidade</h2>
+        <p>
+          A segurança é um dos pilares do projeto. O sistema utiliza
+          autenticação por <strong>JWT (JSON Web Token)</strong>, senhas
+          criptografadas com hash e validações contra ataques como injeção de
+          código e XSS. Os dados dos usuários são armazenados localmente,
+          garantindo controle e privacidade conforme a
+          <strong>Lei Geral de Proteção de Dados (LGPD)</strong>.
+        </p>
+
+        <p>
+          Cada usuário pode acompanhar seu progresso por meio de gráficos
+          interativos que mostram os acertos por quiz e a média de desempenho.
+          Esses dados são gerados a partir das tentativas registradas e oferecem
+          uma visualização clara da evolução de aprendizado.
+        </p>
+      </section>
+
+      <section class="descricao-cursos">
+        <h2>Cartilha de Apresentação</h2>
+        <p>
+          Para divulgar a plataforma de forma acessível e motivadora, foi criada
+          uma <strong>cartilha ilustrada</strong> com linguagem simples e visual
+          atrativo. Esse material tem como objetivo explicar o funcionamento da
+          plataforma e incentivar novos usuários a iniciarem sua jornada no
+          mundo da tecnologia, mesmo sem experiência prévia.
+        </p>
+
+        <p>
+          A cartilha pode ser distribuída de forma digital ou impressa em
+          eventos, oficinas e instituições parceiras. Ela complementa a proposta
+          do DevStart de tornar o aprendizado mais próximo, inclusivo e
+          envolvente.
+        </p>
+      </section>
+
+      <section class="descricao-cursos">
+        <h2>Nosso Impacto</h2>
+        <p>
+          DevStart é mais do que uma plataforma de ensino: é uma ferramenta de
+          transformação social. Através da combinação de tecnologia, educação e
+          ética, o projeto oferece oportunidades reais de crescimento pessoal e
+          profissional, especialmente para aqueles que mais precisam.
+        </p>
+
+        <p>
+          O sistema foi pensado para ser replicável e adaptável, podendo ser
+          utilizado por ONGs, escolas públicas, centros comunitários e projetos
+          sociais. Ao empoderar novos aprendizes, DevStart contribui diretamente
+          para a formação de cidadãos digitais mais conscientes, preparados e
+          atuantes.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 DevStart | Todos os direitos reservados</p>
+    </footer>
+  </body>
+</html>

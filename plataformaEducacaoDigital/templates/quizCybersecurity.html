@@ -1,163 +1,230 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <div class="navbar">
+  <head>
+    <div class="navbar">
       <a href="/home">
-          <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo" width="120" height="120">
+        <img
+          src="{{ url_for('static', filename='img/logo.png') }}"
+          alt="logo"
+          width="120"
+          height="120"
+        />
       </a>
-  </div>
-  <meta charset="UTF-8">
-  <title>Quiz de Cibersegurança</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='quizCybersecurity.css') }}">
-</head>
-<body>
-  <section id="aulaCiberseguranca">
-    <h2>Aula Introdutória: Conceitos Básicos de Cibersegurança</h2>
+    </div>
+    <meta charset="UTF-8" />
+    <title>Quiz de Cibersegurança</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='quizCybersecurity.css') }}"
+    />
+  </head>
+  <body>
+    <section id="aulaCiberseguranca">
+      <h2>Aula Introdutória: Conceitos Básicos de Cibersegurança</h2>
 
-    <p><strong> 1. O que é phishing?</strong></p>
-    <p>Phishing é um tipo de <strong>ataque de engenharia social</strong> onde criminosos tentam enganar usuários para obter informações confidenciais, como senhas ou dados bancários. Normalmente ocorre por e-mails ou mensagens falsas que imitam instituições confiáveis.</p>
-    <pre><code>Exemplo: Um e-mail que parece ser do banco, pedindo para "confirmar sua conta".</code></pre>
+      <p><strong> 1. O que é phishing?</strong></p>
+      <p>
+        Phishing é um tipo de <strong>ataque de engenharia social</strong> onde
+        criminosos tentam enganar usuários para obter informações confidenciais,
+        como senhas ou dados bancários. Normalmente ocorre por e-mails ou
+        mensagens falsas que imitam instituições confiáveis.
+      </p>
+      <pre><code>Exemplo: Um e-mail que parece ser do banco, pedindo para "confirmar sua conta".</code></pre>
 
-    
+      <p><strong> 2. Senhas fortes:</strong></p>
+      <p>
+        Uma senha forte é aquela difícil de ser adivinhada ou quebrada por
+        programas automatizados. Ela deve conter:
+      </p>
+      <ul>
+        <li>Letras maiúsculas e minúsculas</li>
+        <li>Números</li>
+        <li>Caracteres especiais (!, @, #, etc.)</li>
+        <li>No mínimo 8 caracteres</li>
+      </ul>
+      <p>
+        Exemplo de senha fraca: <code>123456</code><br />
+        Exemplo de senha forte: <code>S3nh@F0rte!</code>
+      </p>
 
-    <p><strong> 2. Senhas fortes:</strong></p>
-    <p>Uma senha forte é aquela difícil de ser adivinhada ou quebrada por programas automatizados. Ela deve conter:</p>
-    <ul>
-      <li>Letras maiúsculas e minúsculas</li>
-      <li>Números</li>
-      <li>Caracteres especiais (!, @, #, etc.)</li>
-      <li>No mínimo 8 caracteres</li>
-    </ul>
-    <p>Exemplo de senha fraca: <code>123456</code><br>
-      Exemplo de senha forte: <code>S3nh@F0rte!</code></p>
+      <p><strong> 3. Autenticação de dois fatores (2FA):</strong></p>
+      <p>
+        A autenticação de dois fatores adiciona uma camada extra de segurança.
+        Em vez de apenas uma senha, o usuário precisa confirmar sua identidade
+        com um <strong>segundo método</strong>, como um código enviado por SMS
+        ou um aplicativo autenticador.
+      </p>
+      <pre><code>Senha + Código no celular = Acesso autorizado</code></pre>
+      <p>
+        Mesmo que alguém descubra sua senha, não conseguirá acessar sem o
+        segundo fator.
+      </p>
 
-    
-    <p><strong> 3. Autenticação de dois fatores (2FA):</strong></p>
-    <p>A autenticação de dois fatores adiciona uma camada extra de segurança. Em vez de apenas uma senha, o usuário precisa confirmar sua identidade com um <strong>segundo método</strong>, como um código enviado por SMS ou um aplicativo autenticador.</p>
-    <pre><code>Senha + Código no celular = Acesso autorizado</code></pre>
-    <p>Mesmo que alguém descubra sua senha, não conseguirá acessar sem o segundo fator.</p>
+      <p><strong> 4. O que é um antivírus?</strong></p>
+      <p>
+        É um software projetado para detectar, bloquear e remover
+        <strong>vírus e malwares</strong> do seu dispositivo. Ele funciona como
+        uma proteção ativa, analisando arquivos e comportamentos suspeitos.
+      </p>
+      <p>Exemplos populares: Windows Defender, Avast, Norton.</p>
 
-  
+      <p><strong> 5. Ransomware – O "sequestro digital":</strong></p>
+      <p>
+        Ransomware é um tipo de malware que
+        <strong>bloqueia ou criptografa seus arquivos</strong> e exige um
+        pagamento (resgate) para liberá-los. Muitas vezes o resgate é solicitado
+        em criptomoedas, dificultando o rastreamento.
+      </p>
+      <p>Para se proteger:</p>
+      <ul>
+        <li>Mantenha backups atualizados</li>
+        <li>Use antivírus e mantenha o sistema atualizado</li>
+        <li>Não clique em links ou anexos suspeitos</li>
+      </ul>
+      <br />
+      <a href="/home" id="conteudos-btn">Conteúdos</a>
+    </section>
+    <br />
 
-    <p><strong> 4. O que é um antivírus?</strong></p>
-    <p>É um software projetado para detectar, bloquear e remover <strong>vírus e malwares</strong> do seu dispositivo. Ele funciona como uma proteção ativa, analisando arquivos e comportamentos suspeitos.</p>
-    <p>Exemplos populares: Windows Defender, Avast, Norton.</p>
+    <h4>Respondas as questões acerca do conteúdo acima:</h4>
 
-    
+    <form id="quizForm">
+      <ol>
+        <li>
+          <label>1. O que é phishing?</label><br />
+          <input
+            type="radio"
+            name="q1"
+            value="ataque de engenharia social"
+            required
+          />
+          Ataque de engenharia social<br />
+          <input type="radio" name="q1" value="tipo de firewall" /> Tipo de
+          firewall<br />
+          <input type="radio" name="q1" value="backup em nuvem" /> Backup em
+          nuvem<br />
+          <input type="radio" name="q1" value="criptografia" />
+          Criptografia<br />
+        </li>
+        <br />
 
-    <p><strong> 5. Ransomware – O "sequestro digital":</strong></p>
-    <p>Ransomware é um tipo de malware que <strong>bloqueia ou criptografa seus arquivos</strong> e exige um pagamento (resgate) para liberá-los. Muitas vezes o resgate é solicitado em criptomoedas, dificultando o rastreamento.</p>
-    <p>Para se proteger:</p>
-    <ul>
-      <li>Mantenha backups atualizados</li>
-      <li>Use antivírus e mantenha o sistema atualizado</li>
-      <li>Não clique em links ou anexos suspeitos</li>
-    </ul> <br>
-    <a href="/home" id="conteudos-btn">Conteúdos</a>
-  </section> <br>
+        <li>
+          <label>2. Qual dessas senhas é considerada forte?</label><br />
+          <input type="radio" name="q2" value="S3nh@F0rte!" required />
+          S3nh@F0rte!<br />
+          <input type="radio" name="q2" value="123456" /> 123456<br />
+          <input type="radio" name="q2" value="senha" /> senha<br />
+          <input type="radio" name="q2" value="abcdef" /> abcdef<br />
+        </li>
+        <br />
 
-  <h4>Respondas as questões acerca do conteúdo acima:</h4>
+        <li>
+          <label>3. O que significa autenticação de dois fatores (2FA)?</label
+          ><br />
+          <input
+            type="radio"
+            name="q3"
+            value="duas formas de verificação"
+            required
+          />
+          Duas formas de verificação<br />
+          <input type="radio" name="q3" value="uma senha difícil" /> Uma senha
+          difícil<br />
+          <input type="radio" name="q3" value="login com Facebook" /> Login com
+          Facebook<br />
+          <input type="radio" name="q3" value="senha duplicada" /> Senha
+          duplicada<br />
+        </li>
+        <br />
 
-  <form id="quizForm">
-    <ol>
-      <li>
-        <label>1. O que é phishing?</label><br>
-        <input type="radio" name="q1" value="ataque de engenharia social" required> Ataque de engenharia social<br>
-        <input type="radio" name="q1" value="tipo de firewall"> Tipo de firewall<br>
-        <input type="radio" name="q1" value="backup em nuvem"> Backup em nuvem<br>
-        <input type="radio" name="q1" value="criptografia"> Criptografia<br>
-      </li><br>
+        <li>
+          <label>4. Um software que detecta e remove vírus é chamado de?</label
+          ><br />
+          <input type="radio" name="q4" value="antivírus" required />
+          Antivírus<br />
+          <input type="radio" name="q4" value="firewall" /> Firewall<br />
+          <input type="radio" name="q4" value="sistema operacional" /> Sistema
+          operacional<br />
+          <input type="radio" name="q4" value="backup" /> Backup<br />
+        </li>
+        <br />
 
-      <li>
-        <label>2. Qual dessas senhas é considerada forte?</label><br>
-        <input type="radio" name="q2" value="S3nh@F0rte!" required> S3nh@F0rte!<br>
-        <input type="radio" name="q2" value="123456"> 123456<br>
-        <input type="radio" name="q2" value="senha"> senha<br>
-        <input type="radio" name="q2" value="abcdef"> abcdef<br>
-      </li><br>
+        <li>
+          <label>5. O que é um ransomware?</label><br />
+          <input
+            type="radio"
+            name="q5"
+            value="software de sequestro de dados"
+            required
+          />
+          Software de sequestro de dados<br />
+          <input type="radio" name="q5" value="antivírus" /> Antivírus<br />
+          <input type="radio" name="q5" value="programa educativo" /> Programa
+          educativo<br />
+          <input type="radio" name="q5" value="tipo de hardware" /> Tipo de
+          hardware<br />
+        </li>
+        <br />
+      </ol>
+      <button type="submit">Enviar Respostas</button>
+      <br /><br />
+    </form>
 
-      <li>
-        <label>3. O que significa autenticação de dois fatores (2FA)?</label><br>
-        <input type="radio" name="q3" value="duas formas de verificação" required> Duas formas de verificação<br>
-        <input type="radio" name="q3" value="uma senha difícil"> Uma senha difícil<br>
-        <input type="radio" name="q3" value="login com Facebook"> Login com Facebook<br>
-        <input type="radio" name="q3" value="senha duplicada"> Senha duplicada<br>
-      </li><br>
+    <h3>Resultado:</h3>
+    <pre id="jsonOutput"></pre>
 
-      <li>
-        <label>4. Um software que detecta e remove vírus é chamado de?</label><br>
-        <input type="radio" name="q4" value="antivírus" required> Antivírus<br>
-        <input type="radio" name="q4" value="firewall"> Firewall<br>
-        <input type="radio" name="q4" value="sistema operacional"> Sistema operacional<br>
-        <input type="radio" name="q4" value="backup"> Backup<br>
-      </li><br>
+    <script>
+      const form = document.getElementById("quizForm");
+      const jsonOutput = document.getElementById("jsonOutput");
 
-      <li>
-        <label>5. O que é um ransomware?</label><br>
-        <input type="radio" name="q5" value="software de sequestro de dados" required> Software de sequestro de dados<br>
-        <input type="radio" name="q5" value="antivírus"> Antivírus<br>
-        <input type="radio" name="q5" value="programa educativo"> Programa educativo<br>
-        <input type="radio" name="q5" value="tipo de hardware"> Tipo de hardware<br>
-      </li><br>
-    </ol>
-    <button type="submit">Enviar Respostas</button>
-    <br><br>
-    
-  </form>
-
-  <h3>Resultado:</h3>
-  <pre id="jsonOutput"></pre>
-
-  <script>
-    const form = document.getElementById('quizForm');
-    const jsonOutput = document.getElementById('jsonOutput');
-
-    const respostasCorretas = {
-      q1: 'ataque de engenharia social',
-      q2: 'S3nh@F0rte!',
-      q3: 'duas formas de verificação',
-      q4: 'antivírus',
-      q5: 'software de sequestro de dados'
-    };
-
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      const formData = new FormData(form);
-      let acertos = 0;
-
-      for (let [key, value] of formData.entries()) {
-        if (value.trim().toLowerCase() === respostasCorretas[key].toLowerCase()) {
-          acertos++;
-        }
-      }
-
-      const resultado = {
-        quiz: "Cibersegurança",
-        acertos: acertos,
-        total: Object.keys(respostasCorretas).length,
-        data: new Date().toISOString()
+      const respostasCorretas = {
+        q1: "ataque de engenharia social",
+        q2: "S3nh@F0rte!",
+        q3: "duas formas de verificação",
+        q4: "antivírus",
+        q5: "software de sequestro de dados",
       };
 
-      jsonOutput.textContent = JSON.stringify(resultado, null, 2);
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
 
-      fetch('/saveReviews', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(resultado)
-      })
-      .then(res => res.json())
-      .then(data => {
-        console.log("Resposta do servidor:", data);
-      })
-      .catch(error => {
-        console.error("Erro ao enviar acertos:", error);
+        const formData = new FormData(form);
+        let acertos = 0;
+
+        for (let [key, value] of formData.entries()) {
+          if (
+            value.trim().toLowerCase() === respostasCorretas[key].toLowerCase()
+          ) {
+            acertos++;
+          }
+        }
+
+        const resultado = {
+          quiz: "Cibersegurança",
+          acertos: acertos,
+          total: Object.keys(respostasCorretas).length,
+          data: new Date().toISOString(),
+        };
+
+        jsonOutput.textContent = JSON.stringify(resultado, null, 2);
+
+        fetch("/saveReviews", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(resultado),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log("Resposta do servidor:", data);
+          })
+          .catch((error) => {
+            console.error("Erro ao enviar acertos:", error);
+          });
+
+        form.reset();
       });
-
-      form.reset();
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>

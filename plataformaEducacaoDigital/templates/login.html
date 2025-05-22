@@ -1,73 +1,99 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
-</head>
-<body>
-  <header>
-    <div class="navbar">
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='login.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
         <a href="/landingPage">
-          <img src="{{ url_for('static', filename='img/logo.png') }}" class="image-login" alt="logo" width="120" height="120">
+          <img
+            src="{{ url_for('static', filename='img/logo.png') }}"
+            class="image-login"
+            alt="logo"
+            width="120"
+            height="120"
+          />
         </a>
-    </div>
-    <ul>
+      </div>
+      <ul>
         <li><a href="/landingPage">DevStart</a></li>
         <li><a href="/login">Login</a></li>
         <li><a href="/register">Cadastrar-se</a></li>
-    </ul>
-  </header>
+      </ul>
+    </header>
     <main>
-      <div class= "main-login">
-        <div class= "leftLogin">
-          <h1>Faça seu Login <br> <span> E entre para nosso time!</span></h1>
-          <img src="{{ url_for('static', filename='img/img-login.png') }}" alt="personagem do site" width="400" height="400">
+      <div class="main-login">
+        <div class="leftLogin">
+          <h1>
+            Faça seu Login <br />
+            <span> E entre para nosso time!</span>
+          </h1>
+          <img
+            src="{{ url_for('static', filename='img/img-login.png') }}"
+            alt="personagem do site"
+            width="400"
+            height="400"
+          />
         </div>
-        <div class= "right-login">
+        <div class="right-login">
           <div class="card-login">
             <h1>LOGIN</h1>
             <form action="/login" method="post">
               <label for="username">Usuário:</label>
-              <input type="text" id="username" name="username" placeholder="Usuário" required>  
+              <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Usuário"
+                required
+              />
 
-              <br><br>
+              <br /><br />
 
               <label for="password">Senha:</label>
-              <input type="password" id="password" name="password" placeholder="Senha" required>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Senha"
+                required
+              />
 
-              <br><br>
+              <br /><br />
 
               <button type="submit">Login</button>
 
-              <br><br>
+              <br /><br />
 
               <p>Ainda não tem uma conta? Cadastre-se!</p>
             </form>
             <a href="/register">
-              <button>
-                Criar Cadastro
-              </button>
+              <button>Criar Cadastro</button>
             </a>
             {% if error %}
-              <div id="erro-backend" data-msg="{{ error }}"></div>
+            <div id="erro-backend" data-msg="{{ error }}"></div>
             {% endif %}
             <script>
-              window.onload = function() {
-                  var erroDiv = document.getElementById("erro-backend");
-                  if (erroDiv) {
-                      var mensagem = erroDiv.getAttribute("data-msg");
-                      if (mensagem) {
-                          alert(mensagem);
-                      }
+              window.onload = function () {
+                var erroDiv = document.getElementById("erro-backend");
+                if (erroDiv) {
+                  var mensagem = erroDiv.getAttribute("data-msg");
+                  if (mensagem) {
+                    alert(mensagem);
                   }
-              }
+                }
+              };
             </script>
           </div>
         </div>
-    </div> 
+      </div>
     </main>
-</body>
+  </body>
 </html>
-

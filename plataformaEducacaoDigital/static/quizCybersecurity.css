@@ -1,54 +1,54 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 body {
-    background:linear-gradient(to right, #e1e5f0, #d0aef5);
-    color: #1e3a8a;
-    max-width: 1200px;
-    margin: 10px;
-    padding: 0;
-    font-family: "Poppins", sans-serif;
+  background: linear-gradient(to right, #e1e5f0, #d0aef5);
+  color: #1e3a8a;
+  max-width: 1200px;
+  margin: 10px;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
 }
 
-.navbar{
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
+.navbar {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
-a{
-    color: #1e3a8a;
-    text-decoration: none;
-    font-weight: bold;
+a {
+  color: #1e3a8a;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-a:hover{
-    color:#fcf8ff;
-    transition: 0.3s;
+a:hover {
+  color: #fcf8ff;
+  transition: 0.3s;
 }
 
-#conteudos-btn{
-    border: 2px solid #1e3a8a;
-    padding: 5px;
-    border-radius: 8px;
+#conteudos-btn {
+  border: 2px solid #1e3a8a;
+  padding: 5px;
+  border-radius: 8px;
 }
 
-button{
-    padding: 5px;
-    border: none;
-    border-radius: 8px;
-    outline: none;
-    text-transform: uppercase;
-    cursor: pointer;
-    box-sizing: border-box;
-    color: #1e3a8a;
-    font-weight: bold;
-    background-color: #c7a1f0;
+button {
+  padding: 5px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-sizing: border-box;
+  color: #1e3a8a;
+  font-weight: bold;
+  background-color: #c7a1f0;
 }
 
-#aulaCiberseguranca{
-    background-color: #bf8df5;
-    border-radius: 20px;
-    padding: 1.5rem;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+#aulaCiberseguranca {
+  background-color: #bf8df5;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }

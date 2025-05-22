@@ -1,162 +1,222 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
+  <head>
     <div class="navbar">
-        <a href="/home">
-            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo" width="120" height="120">
-        </a>
+      <a href="/home">
+        <img
+          src="{{ url_for('static', filename='img/logo.png') }}"
+          alt="logo"
+          width="120"
+          height="120"
+        />
+      </a>
     </div>
-  <meta charset="UTF-8">
-  <title>Quiz de Lógica de Programação</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='quizLogic.css') }}">
-</head>
-<body>
-  <section id="aulaLogica">
-    <h2>Aula Introdutória: Lógica de Programação</h2>
+    <meta charset="UTF-8" />
+    <title>Quiz de Lógica de Programação</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='quizLogic.css') }}"
+    />
+  </head>
+  <body>
+    <section id="aulaLogica">
+      <h2>Aula Introdutória: Lógica de Programação</h2>
 
-    <p><strong> 1. O que é um algoritmo?</strong></p>
-    <p>Um algoritmo é uma <strong>sequência lógica e ordenada de passos</strong> que resolve um problema ou executa uma tarefa. Podemos compará-lo a uma receita de bolo: cada passo deve ser seguido corretamente para obter o resultado esperado.</p>
-    <pre><code>Exemplo: 
+      <p><strong> 1. O que é um algoritmo?</strong></p>
+      <p>
+        Um algoritmo é uma
+        <strong>sequência lógica e ordenada de passos</strong> que resolve um
+        problema ou executa uma tarefa. Podemos compará-lo a uma receita de
+        bolo: cada passo deve ser seguido corretamente para obter o resultado
+        esperado.
+      </p>
+      <pre><code>Exemplo: 
   1. Pegue dois números.
   2. Some os dois.
   3. Mostre o resultado.</code></pre>
 
-    
-    <p><strong> 2. Laços de repetição (ou loops):</strong></p>
-    <p>São estruturas usadas para repetir blocos de código enquanto uma condição for verdadeira. Isso evita a repetição manual de comandos e torna o código mais eficiente.</p>
-    <pre><code># Exemplo em Python:
+      <p><strong> 2. Laços de repetição (ou loops):</strong></p>
+      <p>
+        São estruturas usadas para repetir blocos de código enquanto uma
+        condição for verdadeira. Isso evita a repetição manual de comandos e
+        torna o código mais eficiente.
+      </p>
+      <pre><code># Exemplo em Python:
   for i in range(3):
       print("Olá!")  # Saída: Olá! (3 vezes)</code></pre>
 
-    <p>Outros exemplos de laço incluem: <code>while</code> e <code>do...while</code> (em algumas linguagens).</p>
+      <p>
+        Outros exemplos de laço incluem: <code>while</code> e
+        <code>do...while</code> (em algumas linguagens).
+      </p>
 
-    
-
-    <p><strong> 3. Estruturas condicionais:</strong></p>
-    <p>Permitem executar diferentes blocos de código com base em condições. A estrutura mais comum é o <code>if</code>, que verifica se algo é verdadeiro.</p>
-    <pre><code>idade = 18
+      <p><strong> 3. Estruturas condicionais:</strong></p>
+      <p>
+        Permitem executar diferentes blocos de código com base em condições. A
+        estrutura mais comum é o <code>if</code>, que verifica se algo é
+        verdadeiro.
+      </p>
+      <pre><code>idade = 18
   if idade >= 18:
       print("Você é maior de idade.")</code></pre>
 
-    <p>O <code>if</code> pode ser combinado com <code>else</code> e <code>elif</code> (em Python) para testar múltiplas possibilidades.</p>
+      <p>
+        O <code>if</code> pode ser combinado com <code>else</code> e
+        <code>elif</code> (em Python) para testar múltiplas possibilidades.
+      </p>
 
-    
-
-    <p><strong> 4. Variáveis:</strong></p>
-    <p>Uma variável é um <strong>espaço na memória</strong> usado para armazenar dados que podem mudar durante a execução do programa. Ela tem um nome e pode guardar diferentes tipos de valores: números, textos, listas, etc.</p>
-    <pre><code>nome = "Ana"
+      <p><strong> 4. Variáveis:</strong></p>
+      <p>
+        Uma variável é um <strong>espaço na memória</strong> usado para
+        armazenar dados que podem mudar durante a execução do programa. Ela tem
+        um nome e pode guardar diferentes tipos de valores: números, textos,
+        listas, etc.
+      </p>
+      <pre><code>nome = "Ana"
   idade = 20</code></pre>
-    <p>Com elas, podemos manipular e reutilizar valores com facilidade.</p>
+      <p>Com elas, podemos manipular e reutilizar valores com facilidade.</p>
 
-    
-
-    <p><strong> 5. Ordem das operações:</strong></p>
-    <p>Assim como na matemática, em programação existe uma ordem para executar operações. Primeiro multiplicações e divisões, depois somas e subtrações.</p>
-    <p>Na expressão <code>x = 5 + 3 * 2</code>, primeiro é feito <code>3 * 2</code> e depois somado com <code>5</code>. Resultado: <code>11</code>.</p>
-    <pre><code>x = 5 + 3 * 2
+      <p><strong> 5. Ordem das operações:</strong></p>
+      <p>
+        Assim como na matemática, em programação existe uma ordem para executar
+        operações. Primeiro multiplicações e divisões, depois somas e
+        subtrações.
+      </p>
+      <p>
+        Na expressão <code>x = 5 + 3 * 2</code>, primeiro é feito
+        <code>3 * 2</code> e depois somado com <code>5</code>. Resultado:
+        <code>11</code>.
+      </p>
+      <pre><code>x = 5 + 3 * 2
   print(x)  # Saída: 11</code></pre>
 
-    <p>Usar parênteses pode alterar a ordem, como em <code>(5 + 3) * 2 = 16</code>.</p> <br>
-    <a href="/home" id="conteudos-btn">Conteúdos</a>
-  </section> <br>
+      <p>
+        Usar parênteses pode alterar a ordem, como em
+        <code>(5 + 3) * 2 = 16</code>.
+      </p>
+      <br />
+      <a href="/home" id="conteudos-btn">Conteúdos</a>
+    </section>
+    <br />
 
-  <h4>Respondas as questões acerca do conteúdo acima:</h4>
+    <h4>Respondas as questões acerca do conteúdo acima:</h4>
 
-  <form id="quizForm">
-    <ol>
-      <li>
-        <label>1. O que representa um algoritmo?</label><br>
-        <input type="radio" name="q1" value="sequência de passos" required> Sequência de passos<br>
-        <input type="radio" name="q1" value="erro de sistema"> Erro de sistema<br>
-        <input type="radio" name="q1" value="aplicativo"> Aplicativo<br>
-        <input type="radio" name="q1" value="linguagem de máquina"> Linguagem de máquina<br>
-      </li><br>
+    <form id="quizForm">
+      <ol>
+        <li>
+          <label>1. O que representa um algoritmo?</label><br />
+          <input type="radio" name="q1" value="sequência de passos" required />
+          Sequência de passos<br />
+          <input type="radio" name="q1" value="erro de sistema" /> Erro de
+          sistema<br />
+          <input type="radio" name="q1" value="aplicativo" /> Aplicativo<br />
+          <input type="radio" name="q1" value="linguagem de máquina" />
+          Linguagem de máquina<br />
+        </li>
+        <br />
 
-      <li>
-        <label>2. Qual estrutura é usada para repetir instruções?</label><br>
-        <input type="radio" name="q2" value="laço de repetição" required> Laço de repetição<br>
-        <input type="radio" name="q2" value="condicional"> Condicional<br>
-        <input type="radio" name="q2" value="variável"> Variável<br>
-        <input type="radio" name="q2" value="vetor"> Vetor<br>
-      </li><br>
+        <li>
+          <label>2. Qual estrutura é usada para repetir instruções?</label
+          ><br />
+          <input type="radio" name="q2" value="laço de repetição" required />
+          Laço de repetição<br />
+          <input type="radio" name="q2" value="condicional" /> Condicional<br />
+          <input type="radio" name="q2" value="variável" /> Variável<br />
+          <input type="radio" name="q2" value="vetor" /> Vetor<br />
+        </li>
+        <br />
 
-      <li>
-        <label>3. Qual destas é uma estrutura condicional?</label><br>
-        <input type="radio" name="q3" value="if" required> if<br>
-        <input type="radio" name="q3" value="while"> while<br>
-        <input type="radio" name="q3" value="for"> for<br>
-        <input type="radio" name="q3" value="print"> print<br>
-      </li><br>
+        <li>
+          <label>3. Qual destas é uma estrutura condicional?</label><br />
+          <input type="radio" name="q3" value="if" required /> if<br />
+          <input type="radio" name="q3" value="while" /> while<br />
+          <input type="radio" name="q3" value="for" /> for<br />
+          <input type="radio" name="q3" value="print" /> print<br />
+        </li>
+        <br />
 
-      <li>
-        <label>4. O que é uma variável?</label><br>
-        <input type="radio" name="q4" value="local para armazenar dados" required> Local para armazenar dados<br>
-        <input type="radio" name="q4" value="função de loop"> Função de loop<br>
-        <input type="radio" name="q4" value="nome de programa"> Nome de programa<br>
-        <input type="radio" name="q4" value="bloco de código"> Bloco de código<br>
-      </li><br>
+        <li>
+          <label>4. O que é uma variável?</label><br />
+          <input
+            type="radio"
+            name="q4"
+            value="local para armazenar dados"
+            required
+          />
+          Local para armazenar dados<br />
+          <input type="radio" name="q4" value="função de loop" /> Função de
+          loop<br />
+          <input type="radio" name="q4" value="nome de programa" /> Nome de
+          programa<br />
+          <input type="radio" name="q4" value="bloco de código" /> Bloco de
+          código<br />
+        </li>
+        <br />
 
-      <li>
-        <label>5. Qual valor a variável x terá após: x = 5 + 3 * 2?</label><br>
-        <input type="radio" name="q5" value="11" required> 11<br>
-        <input type="radio" name="q5" value="16"> 16<br>
-        <input type="radio" name="q5" value="13"> 13<br>
-        <input type="radio" name="q5" value="10"> 10<br>
-      </li><br>
-    </ol>
-    <button type="submit">Enviar Respostas</button><br><br>
-    
-  </form>
+        <li>
+          <label>5. Qual valor a variável x terá após: x = 5 + 3 * 2?</label
+          ><br />
+          <input type="radio" name="q5" value="11" required /> 11<br />
+          <input type="radio" name="q5" value="16" /> 16<br />
+          <input type="radio" name="q5" value="13" /> 13<br />
+          <input type="radio" name="q5" value="10" /> 10<br />
+        </li>
+        <br />
+      </ol>
+      <button type="submit">Enviar Respostas</button><br /><br />
+    </form>
 
-  <h3>Resultado:</h3>
-  <pre id="jsonOutput"></pre>
+    <h3>Resultado:</h3>
+    <pre id="jsonOutput"></pre>
 
-  <script>
-    const form = document.getElementById('quizForm');
-    const jsonOutput = document.getElementById('jsonOutput');
+    <script>
+      const form = document.getElementById("quizForm");
+      const jsonOutput = document.getElementById("jsonOutput");
 
-    const respostasCorretas = {
-      q1: 'sequência de passos',
-      q2: 'laço de repetição',
-      q3: 'if',
-      q4: 'local para armazenar dados',
-      q5: '11'
-    };
-
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      const formData = new FormData(form);
-      let acertos = 0;
-
-      for (let [key, value] of formData.entries()) {
-        if (value.trim().toLowerCase() === respostasCorretas[key].toLowerCase()) {
-          acertos++;
-        }
-      }
-
-      const resultado = {
-        quiz: "Logica",
-        acertos: acertos,
-        total: Object.keys(respostasCorretas).length,
-        data: new Date().toISOString()
+      const respostasCorretas = {
+        q1: "sequência de passos",
+        q2: "laço de repetição",
+        q3: "if",
+        q4: "local para armazenar dados",
+        q5: "11",
       };
 
-      jsonOutput.textContent = JSON.stringify(resultado, null, 2);
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
 
-      fetch('/saveReviews', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(resultado)
-      })
-      .then(res => res.json())
-      .then(data => console.log("Resposta:", data))
-      .catch(error => console.error("Erro:", error));
+        const formData = new FormData(form);
+        let acertos = 0;
 
-      form.reset();
-    });
-  </script>
-</body>
+        for (let [key, value] of formData.entries()) {
+          if (
+            value.trim().toLowerCase() === respostasCorretas[key].toLowerCase()
+          ) {
+            acertos++;
+          }
+        }
+
+        const resultado = {
+          quiz: "Logica",
+          acertos: acertos,
+          total: Object.keys(respostasCorretas).length,
+          data: new Date().toISOString(),
+        };
+
+        jsonOutput.textContent = JSON.stringify(resultado, null, 2);
+
+        fetch("/saveReviews", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(resultado),
+        })
+          .then((res) => res.json())
+          .then((data) => console.log("Resposta:", data))
+          .catch((error) => console.error("Erro:", error));
+
+        form.reset();
+      });
+    </script>
+  </body>
 </html>

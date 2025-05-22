@@ -1,153 +1,202 @@
 <!DOCTYPE html>
 <html lang="PT-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dev Start - Home</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='home.css') }}"
+    />
+  </head>
+  <body>
     <header>
-    <div class="navbar">
+      <div class="navbar">
         <a href="/home">
-            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo" width="120" height="120">
+          <img
+            src="{{ url_for('static', filename='img/logo.png') }}"
+            alt="logo"
+            width="120"
+            height="120"
+          />
         </a>
-    </div>
-    <ul>
+      </div>
+      <ul>
         <li><a href="/home">Cursos</a></li>
         <li><a href="/about">Sobre</a></li>
         <li><a href="/logout">Sair</a></li>
-    </ul>
+      </ul>
     </header>
 
     <main>
-        <section class="banner">
-            <div class="banner-texto">
-                <h1>Bem-vindo à plataforma DevStart!</h1><br>
-                <p><span>Aprenda de forma gratuita e prática!</span></p>
-            </div>
-        </section>
+      <section class="banner">
+        <div class="banner-texto">
+          <h1>Bem-vindo à plataforma DevStart!</h1>
+          <br />
+          <p><span>Aprenda de forma gratuita e prática!</span></p>
+        </div>
+      </section>
 
-        <section class="descricao-cursos">
-            <h2>Sobre os Cursos</h2>
-            <p>Na DevStart, oferecemos cursos gratuitos e práticos que cobrem áreas essenciais da tecnologia, ideais tanto para iniciantes quanto para aqueles que já possuem algum conhecimento na área. Cada curso é cuidadosamente estruturado para fornecer uma base sólida de aprendizado, com conteúdos atualizados e desafiadores que irão impulsionar suas habilidades e preparar você para os desafios do mercado de trabalho.</p>
-            <p>Através de métodos interativos, como quizzes e desafios, você poderá testar seus conhecimentos e acompanhar seu progresso à medida que avança em cada módulo. Independentemente do seu interesse, temos algo para você: desde lógica de programação até temas mais avançados, como cibersegurança. Comece agora e aprenda de forma prática e divertida!</p>
-        </section>
+      <section class="descricao-cursos">
+        <h2>Sobre os Cursos</h2>
+        <p>
+          Na DevStart, oferecemos cursos gratuitos e práticos que cobrem áreas
+          essenciais da tecnologia, ideais tanto para iniciantes quanto para
+          aqueles que já possuem algum conhecimento na área. Cada curso é
+          cuidadosamente estruturado para fornecer uma base sólida de
+          aprendizado, com conteúdos atualizados e desafiadores que irão
+          impulsionar suas habilidades e preparar você para os desafios do
+          mercado de trabalho.
+        </p>
+        <p>
+          Através de métodos interativos, como quizzes e desafios, você poderá
+          testar seus conhecimentos e acompanhar seu progresso à medida que
+          avança em cada módulo. Independentemente do seu interesse, temos algo
+          para você: desde lógica de programação até temas mais avançados, como
+          cibersegurança. Comece agora e aprenda de forma prática e divertida!
+        </p>
+      </section>
 
-        
-        <section class="cursos">
-            <h2>Cursos disponiveis</h2><br>
-            <p><span>Explore cada linha de conhecimento disponiveis nos cursos abaixo!</span></p>
-            <div class="cursos-conteiner">
-                <div class="card">
-                    <h3>Lógica de Programação</h3>
-                    <img src="{{ url_for('static', filename='img/logo-logica.png') }}" alt="logo" width="70" height="70">
-                    <a href="/quizLogic">
-                        <button>Acessar</button>
-                    </a>
-                </div>
-                <div class="card">
-                    <h3>Phyton</h3>
-                    <img src="{{ url_for('static', filename='img/logo-python.png') }}" alt="logo" width="70" height="70">
-                    <a href="/quizPython">
-                        <button>Acessar</button>
-                    </a>
-                </div>
-                <div class="card">
-                    <h3>HTML para iniciantes</h3>
-                    <img src="{{ url_for('static', filename='img/logo-html.png') }}" alt="logo" width="70" height="70">
-                    <a href="/quizHtml">
-                        <button>Acessar</button>
-                    </a>
-                </div>
-                <div class="card">
-                    <h3>Cibersegurança</h3>
-                    <img src="{{ url_for('static', filename='img/logo-cybersecurity.png') }}" alt="logo" width="70" height="70">
-                    <a href="/quizCybersecurity">
-                        <button>Acessar</button>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        
+      <section class="cursos">
+        <h2>Cursos disponiveis</h2>
+        <br />
+        <p>
+          <span
+            >Explore cada linha de conhecimento disponiveis nos cursos
+            abaixo!</span
+          >
+        </p>
+        <div class="cursos-conteiner">
+          <div class="card">
+            <h3>Lógica de Programação</h3>
+            <img
+              src="{{ url_for('static', filename='img/logo-logica.png') }}"
+              alt="logo"
+              width="70"
+              height="70"
+            />
+            <a href="/quizLogic">
+              <button>Acessar</button>
+            </a>
+          </div>
+          <div class="card">
+            <h3>Phyton</h3>
+            <img
+              src="{{ url_for('static', filename='img/logo-python.png') }}"
+              alt="logo"
+              width="70"
+              height="70"
+            />
+            <a href="/quizPython">
+              <button>Acessar</button>
+            </a>
+          </div>
+          <div class="card">
+            <h3>HTML para iniciantes</h3>
+            <img
+              src="{{ url_for('static', filename='img/logo-html.png') }}"
+              alt="logo"
+              width="70"
+              height="70"
+            />
+            <a href="/quizHtml">
+              <button>Acessar</button>
+            </a>
+          </div>
+          <div class="card">
+            <h3>Cibersegurança</h3>
+            <img
+              src="{{ url_for('static', filename='img/logo-cybersecurity.png') }}"
+              alt="logo"
+              width="70"
+              height="70"
+            />
+            <a href="/quizCybersecurity">
+              <button>Acessar</button>
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
     <center>
-        <div style="width: 1000px; margin: 0 auto;">
-            <h2>Acertos por Quiz</h2>
-            <canvas id="graphicAcertos" height="100"></canvas>
-        </div>
-            
-        <div style="width: 1000px; margin: 0 auto;">
-            <h2>Média de Acertos(%)</h2>
-            <canvas id="graphicMedia" height="100"></canvas>
-        </div>
+      <div style="width: 1000px; margin: 0 auto">
+        <h2>Acertos por Quiz</h2>
+        <canvas id="graphicAcertos" height="100"></canvas>
+      </div>
+
+      <div style="width: 1000px; margin: 0 auto">
+        <h2>Média de Acertos(%)</h2>
+        <canvas id="graphicMedia" height="100"></canvas>
+      </div>
     </center>
-    
-        
-    
+
     <footer>
-        <p>&copy; 2025 DevStart | Todos os direitos reservados</p>
+      <p>&copy; 2025 DevStart | Todos os direitos reservados</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
-        fetch('/graphicData')
-        .then(res => res.json())
-        .then(data => {
-            // ----- GRÁFICO 1: Acertos por Quiz -----
-            const labels = Object.keys(data.porQuiz);
-            const acertos = labels.map(quiz => data.porQuiz[quiz].acertos);
+      fetch("/graphicData")
+        .then((res) => res.json())
+        .then((data) => {
+          // ----- GRÁFICO 1: Acertos por Quiz -----
+          const labels = Object.keys(data.porQuiz);
+          const acertos = labels.map((quiz) => data.porQuiz[quiz].acertos);
 
-            const ctx1 = document.getElementById('graphicAcertos').getContext('2d');
-            new Chart(ctx1, {
-            type: 'bar',
+          const ctx1 = document
+            .getElementById("graphicAcertos")
+            .getContext("2d");
+          new Chart(ctx1, {
+            type: "bar",
             data: {
-                labels: labels,
-                datasets: [{
-                label: 'Acertos',
-                data: acertos,
-                backgroundColor: '#4caf50'
-                }]
+              labels: labels,
+              datasets: [
+                {
+                  label: "Acertos",
+                  data: acertos,
+                  backgroundColor: "#4caf50",
+                },
+              ],
             },
             options: {
-                scales: {
+              scales: {
                 y: {
-                    beginAtZero: true,
-                    precision: 0
-                }
-                }
-            }
-            });
+                  beginAtZero: true,
+                  precision: 0,
+                },
+              },
+            },
+          });
 
-            // ----- GRÁFICO 2: Média em % -----
-            const ctx2 = document.getElementById('graphicMedia').getContext('2d');
-            new Chart(ctx2, {
-            type: 'bar',
+          // ----- GRÁFICO 2: Média em % -----
+          const ctx2 = document.getElementById("graphicMedia").getContext("2d");
+          new Chart(ctx2, {
+            type: "bar",
             data: {
-                labels: ['Média (%)'],
-                datasets: [{
-                label: 'Média',
-                data: [data.media],
-                backgroundColor: '#ff9800'
-                }]
+              labels: ["Média (%)"],
+              datasets: [
+                {
+                  label: "Média",
+                  data: [data.media],
+                  backgroundColor: "#ff9800",
+                },
+              ],
             },
             options: {
-                scales: {
+              scales: {
                 y: {
-                    beginAtZero: true,
-                    max: 100,
-                    ticks: {
-                    stepSize: 10
-                    }
-                }
-                }
-            }
-            });
+                  beginAtZero: true,
+                  max: 100,
+                  ticks: {
+                    stepSize: 10,
+                  },
+                },
+              },
+            },
+          });
         })
-        .catch(error => console.error("Erro ao carregar dados:", error));
+        .catch((error) => console.error("Erro ao carregar dados:", error));
     </script>
-
-</body>
+  </body>
 </html>

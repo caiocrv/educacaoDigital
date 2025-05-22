@@ -1,153 +1,226 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
+  <head>
     <div class="navbar">
-        <a href="/home">
-            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo" width="120" height="120">
-        </a>
+      <a href="/home">
+        <img
+          src="{{ url_for('static', filename='img/logo.png') }}"
+          alt="logo"
+          width="120"
+          height="120"
+        />
+      </a>
     </div>
-  <meta charset="UTF-8">
-  <title>Quiz de HTML</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='quizHtml.css') }}">
-</head>
-<body>
-  <section id="aulaHtml">
-    <h2>Aula Introdutória: Fundamentos de HTML</h2>
+    <meta charset="UTF-8" />
+    <title>Quiz de HTML</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='quizHtml.css') }}"
+    />
+  </head>
+  <body>
+    <section id="aulaHtml">
+      <h2>Aula Introdutória: Fundamentos de HTML</h2>
 
-    <p><strong> 1. O que é HTML?</strong></p>
-    <p>HTML é a sigla para <strong>HyperText Markup Language</strong>, ou seja, Linguagem de Marcação de Hipertexto. É a base da estrutura de páginas web. Com HTML, criamos títulos, parágrafos, links, imagens e muito mais. Ele organiza o conteúdo para que o navegador saiba como exibir as informações.</p>
+      <p><strong> 1. O que é HTML?</strong></p>
+      <p>
+        HTML é a sigla para <strong>HyperText Markup Language</strong>, ou seja,
+        Linguagem de Marcação de Hipertexto. É a base da estrutura de páginas
+        web. Com HTML, criamos títulos, parágrafos, links, imagens e muito mais.
+        Ele organiza o conteúdo para que o navegador saiba como exibir as
+        informações.
+      </p>
 
-  
+      <p><strong> 2. Como criar parágrafos:</strong></p>
+      <p>
+        Para escrever textos ou blocos de conteúdo, usamos a tag
+        <code>&lt;p&gt;</code>, que representa um parágrafo. É uma das
+        estruturas mais comuns em qualquer site.
+      </p>
+      <pre><code>&lt;p&gt;Este é um parágrafo em HTML.&lt;/p&gt;</code></pre>
 
-    <p><strong> 2. Como criar parágrafos:</strong></p>
-    <p>Para escrever textos ou blocos de conteúdo, usamos a tag <code>&lt;p&gt;</code>, que representa um parágrafo. É uma das estruturas mais comuns em qualquer site.</p>
-    <pre><code>&lt;p&gt;Este é um parágrafo em HTML.&lt;/p&gt;</code></pre>
+      <p>
+        Outras tags de conteúdo: <code>&lt;h1&gt; a &lt;h6&gt;</code> (títulos),
+        <code>&lt;div&gt;</code> (blocos genéricos),
+        <code>&lt;span&gt;</code> (texto em linha).
+      </p>
 
-    <p>Outras tags de conteúdo: <code>&lt;h1&gt; a &lt;h6&gt;</code> (títulos), <code>&lt;div&gt;</code> (blocos genéricos), <code>&lt;span&gt;</code> (texto em linha).</p>
+      <p>
+        <strong> 3. Criando links com a tag <code>&lt;a&gt;</code>:</strong>
+      </p>
+      <p>
+        Para criar um link clicável, usamos a tag <code>&lt;a&gt;</code> e o
+        atributo <code>href</code>, que indica o destino do link.
+      </p>
+      <pre><code>&lt;a href="https://www.exemplo.com"&gt;Visite o site&lt;/a&gt;</code></pre>
 
-    
+      <p>
+        Outros atributos importantes: <code>target="_blank"</code> para abrir em
+        nova aba, <code>title</code> para dica ao passar o mouse.
+      </p>
 
-    <p><strong> 3. Criando links com a tag <code>&lt;a&gt;</code>:</strong></p>
-    <p>Para criar um link clicável, usamos a tag <code>&lt;a&gt;</code> e o atributo <code>href</code>, que indica o destino do link.</p>
-    <pre><code>&lt;a href="https://www.exemplo.com"&gt;Visite o site&lt;/a&gt;</code></pre>
+      <p>
+        <strong>
+          4. Inserindo imagens com a tag <code>&lt;img&gt;</code>:</strong
+        >
+      </p>
+      <p>
+        Para exibir imagens em uma página, usamos a tag
+        <code>&lt;img&gt;</code>. Ela precisa do atributo <code>src</code> para
+        indicar o caminho da imagem, e do atributo <code>alt</code> para
+        acessibilidade.
+      </p>
+      <pre><code>&lt;img src="caminho/da/imagem.jpg" alt="Descrição da imagem"&gt;</code></pre>
 
-    <p>Outros atributos importantes: <code>target="_blank"</code> para abrir em nova aba, <code>title</code> para dica ao passar o mouse.</p>
+      <p>
+        A tag <code>&lt;img&gt;</code> não tem fechamento (é uma
+        <em>tag vazia</em>).
+      </p>
 
-    
+      <p><strong> 5. Comentários em HTML:</strong></p>
+      <p>
+        Os comentários servem para adicionar anotações no código, que não são
+        exibidas ao usuário no navegador. Eles são úteis para organização,
+        explicações ou desativação temporária de partes do código.
+      </p>
+      <pre><code>&lt;!-- Este é um comentário em HTML --&gt;</code></pre>
 
-    <p><strong> 4. Inserindo imagens com a tag <code>&lt;img&gt;</code>:</strong></p>
-    <p>Para exibir imagens em uma página, usamos a tag <code>&lt;img&gt;</code>. Ela precisa do atributo <code>src</code> para indicar o caminho da imagem, e do atributo <code>alt</code> para acessibilidade.</p>
-    <pre><code>&lt;img src="caminho/da/imagem.jpg" alt="Descrição da imagem"&gt;</code></pre>
+      <p>
+        Evite usar <code>//</code>, <code>/* */</code> ou <code>##</code>, pois
+        esses formatos pertencem a outras linguagens como JavaScript, CSS e
+        Python.
+      </p>
+      <br />
+      <a href="/home" id="conteudos-btn">Conteúdos</a>
+    </section>
+    <br />
 
-    <p>A tag <code>&lt;img&gt;</code> não tem fechamento (é uma <em>tag vazia</em>).</p>
+    <h4>Respondas as questões acerca do conteúdo acima:</h4>
 
-    
+    <form id="quizForm">
+      <ol>
+        <li>
+          <label>1. O que significa HTML?</label><br />
+          <input
+            type="radio"
+            name="q1"
+            value="HyperText Markup Language"
+            required
+          />
+          HyperText Markup Language<br />
+          <input type="radio" name="q1" value="Home Tool Markup Language" />
+          Home Tool Markup Language<br />
+          <input
+            type="radio"
+            name="q1"
+            value="Hyperlinks Text Management Language"
+          />
+          Hyperlinks Text Management Language<br />
+          <input
+            type="radio"
+            name="q1"
+            value="Hyperlink and Text Markup Logic"
+          />
+          Hyperlink and Text Markup Logic<br />
+        </li>
+        <br />
 
-    <p><strong> 5. Comentários em HTML:</strong></p>
-    <p>Os comentários servem para adicionar anotações no código, que não são exibidas ao usuário no navegador. Eles são úteis para organização, explicações ou desativação temporária de partes do código.</p>
-    <pre><code>&lt;!-- Este é um comentário em HTML --&gt;</code></pre>
+        <li>
+          <label>2. Qual tag é usada para criar um parágrafo?</label><br />
+          <input type="radio" name="q2" value="p" required /> &lt;p&gt;<br />
+          <input type="radio" name="q2" value="div" /> &lt;div&gt;<br />
+          <input type="radio" name="q2" value="h1" /> &lt;h1&gt;<br />
+          <input type="radio" name="q2" value="span" /> &lt;span&gt;<br />
+        </li>
+        <br />
 
-    <p>Evite usar <code>//</code>, <code>/* */</code> ou <code>##</code>, pois esses formatos pertencem a outras linguagens como JavaScript, CSS e Python.</p> <br>
-    <a href="/home" id="conteudos-btn">Conteúdos</a>
-  </section> <br>
+        <li>
+          <label>3. Qual atributo define o link de uma tag &lt;a&gt;?</label
+          ><br />
+          <input type="radio" name="q3" value="href" required /> href<br />
+          <input type="radio" name="q3" value="src" /> src<br />
+          <input type="radio" name="q3" value="alt" /> alt<br />
+          <input type="radio" name="q3" value="link" /> link<br />
+        </li>
+        <br />
 
-  <h4>Respondas as questões acerca do conteúdo acima:</h4>
+        <li>
+          <label>4. Qual tag usamos para imagens?</label><br />
+          <input type="radio" name="q4" value="img" required />
+          &lt;img&gt;<br />
+          <input type="radio" name="q4" value="src" /> &lt;src&gt;<br />
+          <input type="radio" name="q4" value="image" /> &lt;image&gt;<br />
+          <input type="radio" name="q4" value="pic" /> &lt;pic&gt;<br />
+        </li>
+        <br />
 
-  <form id="quizForm">
-    <ol>
-      <li>
-        <label>1. O que significa HTML?</label><br>
-        <input type="radio" name="q1" value="HyperText Markup Language" required> HyperText Markup Language<br>
-        <input type="radio" name="q1" value="Home Tool Markup Language"> Home Tool Markup Language<br>
-        <input type="radio" name="q1" value="Hyperlinks Text Management Language"> Hyperlinks Text Management Language<br>
-        <input type="radio" name="q1" value="Hyperlink and Text Markup Logic"> Hyperlink and Text Markup Logic<br>
-      </li><br>
+        <li>
+          <label>5. Como se comenta em HTML?</label><br />
+          <input type="radio" name="q5" value="<!-- comentário -->" required />
+          &lt;!-- comentário --&gt;<br />
+          <input type="radio" name="q5" value="// comentário" /> //
+          comentário<br />
+          <input type="radio" name="q5" value="/* comentário */" /> /*
+          comentário */<br />
+          <input type="radio" name="q5" value="## comentário" /> ##
+          comentário<br />
+        </li>
+        <br />
+      </ol>
+      <button type="submit">Enviar Respostas</button><br /><br />
+    </form>
 
-      <li>
-        <label>2. Qual tag é usada para criar um parágrafo?</label><br>
-        <input type="radio" name="q2" value="p" required> &lt;p&gt;<br>
-        <input type="radio" name="q2" value="div"> &lt;div&gt;<br>
-        <input type="radio" name="q2" value="h1"> &lt;h1&gt;<br>
-        <input type="radio" name="q2" value="span"> &lt;span&gt;<br>
-      </li><br>
+    <h3>Resultado:</h3>
+    <pre id="jsonOutput"></pre>
 
-      <li>
-        <label>3. Qual atributo define o link de uma tag &lt;a&gt;?</label><br>
-        <input type="radio" name="q3" value="href" required> href<br>
-        <input type="radio" name="q3" value="src"> src<br>
-        <input type="radio" name="q3" value="alt"> alt<br>
-        <input type="radio" name="q3" value="link"> link<br>
-      </li><br>
+    <script>
+      const form = document.getElementById("quizForm");
+      const jsonOutput = document.getElementById("jsonOutput");
 
-      <li>
-        <label>4. Qual tag usamos para imagens?</label><br>
-        <input type="radio" name="q4" value="img" required> &lt;img&gt;<br>
-        <input type="radio" name="q4" value="src"> &lt;src&gt;<br>
-        <input type="radio" name="q4" value="image"> &lt;image&gt;<br>
-        <input type="radio" name="q4" value="pic"> &lt;pic&gt;<br>
-      </li><br>
-
-      <li>
-        <label>5. Como se comenta em HTML?</label><br>
-        <input type="radio" name="q5" value="<!-- comentário -->" required> &lt;!-- comentário --&gt;<br>
-        <input type="radio" name="q5" value="// comentário"> // comentário<br>
-        <input type="radio" name="q5" value="/* comentário */"> /* comentário */<br>
-        <input type="radio" name="q5" value="## comentário"> ## comentário<br>
-      </li><br>
-    </ol>
-    <button type="submit">Enviar Respostas</button><br><br>
-    
-  </form>
-
-  <h3>Resultado:</h3>
-  <pre id="jsonOutput"></pre>
-
-  <script>
-    const form = document.getElementById('quizForm');
-    const jsonOutput = document.getElementById('jsonOutput');
-
-    const respostasCorretas = {
-      q1: 'HyperText Markup Language',
-      q2: 'p',
-      q3: 'href',
-      q4: 'img',
-      q5: '<!-- comentário -->'
-    };
-
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      const formData = new FormData(form);
-      let acertos = 0;
-
-      for (let [key, value] of formData.entries()) {
-        if (value.trim().toLowerCase() === respostasCorretas[key].toLowerCase()) {
-          acertos++;
-        }
-      }
-
-      const resultado = {
-        quiz: "HTML",
-        acertos: acertos,
-        total: Object.keys(respostasCorretas).length,
-        data: new Date().toISOString()
+      const respostasCorretas = {
+        q1: "HyperText Markup Language",
+        q2: "p",
+        q3: "href",
+        q4: "img",
+        q5: "<!-- comentário -->",
       };
 
-      jsonOutput.textContent = JSON.stringify(resultado, null, 2);
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
 
-      fetch('/saveReviews', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(resultado)
-      })
-      .then(res => res.json())
-      .then(data => console.log("Resposta:", data))
-      .catch(error => console.error("Erro:", error));
+        const formData = new FormData(form);
+        let acertos = 0;
 
-      form.reset();
-    });
-  </script>
-</body>
+        for (let [key, value] of formData.entries()) {
+          if (
+            value.trim().toLowerCase() === respostasCorretas[key].toLowerCase()
+          ) {
+            acertos++;
+          }
+        }
+
+        const resultado = {
+          quiz: "HTML",
+          acertos: acertos,
+          total: Object.keys(respostasCorretas).length,
+          data: new Date().toISOString(),
+        };
+
+        jsonOutput.textContent = JSON.stringify(resultado, null, 2);
+
+        fetch("/saveReviews", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(resultado),
+        })
+          .then((res) => res.json())
+          .then((data) => console.log("Resposta:", data))
+          .catch((error) => console.error("Erro:", error));
+
+        form.reset();
+      });
+    </script>
+  </body>
 </html>

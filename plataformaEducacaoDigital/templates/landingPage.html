@@ -1,36 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DevStart - Comece a Programar</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-  <header>
-   <div class="navbar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevStart - Comece a Programar</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
         <a href="/landingPage">
-          <img src="{{ url_for('static', filename='img/logo.png') }}" class="image-login" alt="logo" width="120" height="120">
+          <img
+            src="{{ url_for('static', filename='img/logo.png') }}"
+            class="image-login"
+            alt="logo"
+            width="120"
+            height="120"
+          />
         </a>
-    </div>
-    <ul>
-      <li><a href="/landingPage">DevStart</a></li>
-      <li><a href="/login">Login</a></li>
-      <li><a href="/register">Cadastrar-se</a></li>
-    </ul>
-  </header>
+      </div>
+      <ul>
+        <li><a href="/about">Sobre</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/register">Cadastrar-se</a></li>
+      </ul>
+    </header>
 
-  <main>
-    <aside>
-      <h2>Comece a programar do zero <br>com a <span>DevStart</span>!</h2>
-      <p>Você quer aprender a programar mas não sabe por onde começar? A gente te ajuda!<br>Na DevStart, você vai aprender passo a passo, de forma simples e pratica. Mesmo que nunca tenha escrito uma linha de código</p>
-      <p><span id="paragrafo">Você não precisa ser expert para começar <br> só precisa dar o primeiro passo!</span></p>
-    </aside>
+    <main>
+      <aside>
+        <h2>Comece a programar do zero <br />com a <span>DevStart</span>!</h2>
+        <p>
+          Você quer aprender a programar mas não sabe por onde começar? A gente
+          te ajuda!<br />Na DevStart, você vai aprender passo a passo, de forma
+          simples e pratica. Mesmo que nunca tenha escrito uma linha de código
+        </p>
+        <p>
+          <span id="paragrafo"
+            >Você não precisa ser expert para começar <br />
+            só precisa dar o primeiro passo!</span
+          >
+        </p>
+      </aside>
 
-    <article>
-      <img src="{{ url_for('static', filename='img/img-landingPage.png') }}" alt="personagem do site" width="400" height="400">
-    </article>
-  </main>
-</body>
+      <article>
+        <img
+          src="{{ url_for('static', filename='img/img-landingPage.png') }}"
+          alt="personagem do site"
+          width="400"
+          height="400"
+        />
+      </article>
+    </main>
+  </body>
 </html>
-
