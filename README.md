@@ -143,4 +143,4 @@ Caio Gomes Carvalho
 * 💼 LinkedIn: [https://linkedin.com/in/caiocrv](https://linkedin.com/in/caiocrv)
 
 Khimberlly Lino Pereira Araujo
-* 💼 LinkedIn: [https://linkedin.com/in/caiocrv](http://www.linkedin.com/in/khimberlly-lino-149592260)
+* 💼 LinkedIn: [https://linkedin.com/in/khimberlly](http://www.linkedin.com/in/khimberlly-lino-149592260)
