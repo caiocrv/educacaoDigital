@@ -1,27 +1,12 @@
 [
-    {
-        "id": "d13c7d71-4dfb-45b8-a73d-1201f885d433",
-        "username": "user1",
-        "password": "password1"
-    },
-    {
-        "id": "6a19fca2-3f61-46fb-b98d-8d498df8d1f2",
-        "username": "user2",
-        "password": "password2"
-    },
-    {
-        "id": "38350f60-73e8-477d-9609-881180d870ce",
-        "username": "caio",
-        "password": "$argon2id$v=19$m=65536,t=3,p=4$dR06q0JbxU5C173UPKhstA$1JCZgq9ok34J/ciNnA4SwUBUHoU5rv3tcBPiC47uPT8"
-    },
-    {
-        "id": "9c804a57-e2d8-4531-844e-017c1a173bb1",
-        "username": "khim",
-        "password": "$argon2id$v=19$m=65536,t=3,p=4$5WEUi8jC+jTALKNtiYAZEA$lvquE+2JAfcCu90H6FP0KcUcP4DwUv4QnpEgcjLfAqs"
-    },
-    {
-        "id": "4cc2fb90-fd0b-4759-a87d-4127021709d2",
-        "username": "dev.start",
-        "password": "$argon2id$v=19$m=65536,t=3,p=4$gcnWieb60veP7I3LWOuR+w$2h5ZLgSU82eRJ9/XbHUuj6JltntQvpmNLU28xU3OIGU"
-    }
+  {
+    "id": "38350f60-73e8-477d-9609-881180d870ce",
+    "username": "caio",
+    "password": "$argon2id$v=19$m=65536,t=3,p=4$dR06q0JbxU5C173UPKhstA$1JCZgq9ok34J/ciNnA4SwUBUHoU5rv3tcBPiC47uPT8"
+  },
+  {
+    "id": "9c804a57-e2d8-4531-844e-017c1a173bb1",
+    "username": "khim",
+    "password": "$argon2id$v=19$m=65536,t=3,p=4$5WEUi8jC+jTALKNtiYAZEA$lvquE+2JAfcCu90H6FP0KcUcP4DwUv4QnpEgcjLfAqs"
+  }
 ]

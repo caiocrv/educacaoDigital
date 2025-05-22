@@ -1,80 +1,62 @@
 [
-    {
-        "user_id": "38350f60-73e8-477d-9609-881180d870ce",
-        "username": "caio",
-        "avaliacoes": [
-            {
-                "quiz": "Python",
-                "acertos": 4,
-                "total": 5,
-                "data": "2025-05-13T01:56:06.543Z"
-            },
-            {
-                "quiz": "Python",
-                "acertos": 4,
-                "total": 5,
-                "data": "2025-05-13T02:57:11.432Z"
-            },
-            {
-                "quiz": "Cibersegurança",
-                "acertos": 4,
-                "total": 5,
-                "data": "2025-05-16T01:36:20.628Z"
-            },
-            {
-                "quiz": "Python",
-                "acertos": 1,
-                "total": 5,
-                "data": "2025-05-16T01:39:56.975Z"
-            },
-            {
-                "quiz": "Python",
-                "acertos": 5,
-                "total": 5,
-                "data": "2025-05-16T01:42:52.715Z"
-            },
-            {
-                "quiz": "Logica",
-                "acertos": 5,
-                "total": 5,
-                "data": "2025-05-16T02:11:02.447Z"
-            },
-            {
-                "quiz": "HTML",
-                "acertos": 4,
-                "total": 5,
-                "data": "2025-05-16T02:16:03.022Z"
-            },
-            {
-                "quiz": "HTML",
-                "acertos": 5,
-                "total": 5,
-                "data": "2025-05-16T02:16:10.406Z"
-            },
-            {
-                "quiz": "Cibersegurança",
-                "acertos": 5,
-                "total": 5,
-                "data": "2025-05-16T02:16:47.999Z"
-            }
-        ]
-    },
-    {
-        "user_id": "4cc2fb90-fd0b-4759-a87d-4127021709d2",
-        "username": "dev.start",
-        "avaliacoes": [
-            {
-                "quiz": "Python",
-                "acertos": 5,
-                "total": 5,
-                "data": "2025-05-22T01:11:00.168Z"
-            },
-            {
-                "quiz": "HTML",
-                "acertos": 5,
-                "total": 5,
-                "data": "2025-05-22T01:16:58.708Z"
-            }
-        ]
-    }
+  {
+    "user_id": "38350f60-73e8-477d-9609-881180d870ce",
+    "username": "caio",
+    "avaliacoes": [
+      {
+        "quiz": "Python",
+        "acertos": 4,
+        "total": 5,
+        "data": "2025-05-13T01:56:06.543Z"
+      },
+      {
+        "quiz": "Python",
+        "acertos": 4,
+        "total": 5,
+        "data": "2025-05-13T02:57:11.432Z"
+      },
+      {
+        "quiz": "Cibersegurança",
+        "acertos": 4,
+        "total": 5,
+        "data": "2025-05-16T01:36:20.628Z"
+      },
+      {
+        "quiz": "Python",
+        "acertos": 1,
+        "total": 5,
+        "data": "2025-05-16T01:39:56.975Z"
+      },
+      {
+        "quiz": "Python",
+        "acertos": 5,
+        "total": 5,
+        "data": "2025-05-16T01:42:52.715Z"
+      },
+      {
+        "quiz": "Logica",
+        "acertos": 5,
+        "total": 5,
+        "data": "2025-05-16T02:11:02.447Z"
+      },
+      {
+        "quiz": "HTML",
+        "acertos": 4,
+        "total": 5,
+        "data": "2025-05-16T02:16:03.022Z"
+      },
+      {
+        "quiz": "HTML",
+        "acertos": 5,
+        "total": 5,
+        "data": "2025-05-16T02:16:10.406Z"
+      },
+      {
+        "quiz": "Cibersegurança",
+        "acertos": 5,
+        "total": 5,
+        "data": "2025-05-16T02:16:47.999Z"
+      }
+    ]
+  }
 ]
